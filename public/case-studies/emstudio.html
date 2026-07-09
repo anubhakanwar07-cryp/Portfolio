@@ -4,8 +4,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>EmStudio — Anubha Kanwar</title>
-<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:ital,wght@0,300;0,400;0,500;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
+@font-face{font-family:'Junicode';src:url('/fonts/Junicode.ttf') format('truetype');font-weight:400;font-style:normal;}
+@font-face{font-family:'Junicode';src:url('/fonts/Junicode-Bold.ttf') format('truetype');font-weight:700;font-style:normal;}
+@font-face{font-family:'Junicode';src:url('/fonts/Junicode-Italic.ttf') format('truetype');font-weight:400;font-style:italic;}
+@font-face{font-family:'Junicode';src:url('/fonts/Junicode-BoldItalic.ttf') format('truetype');font-weight:700;font-style:italic;}
+@font-face{font-family:'Bricolage Grotesque';src:url('/fonts/bricolage-grotesque-latin-200-normal.ttf') format('truetype');font-weight:200;font-style:normal;}
+@font-face{font-family:'Bricolage Grotesque';src:url('/fonts/bricolage-grotesque-latin-300-normal.ttf') format('truetype');font-weight:300;font-style:normal;}
+@font-face{font-family:'Bricolage Grotesque';src:url('/fonts/bricolage-grotesque-latin-400-normal.ttf') format('truetype');font-weight:400;font-style:normal;}
+@font-face{font-family:'Bricolage Grotesque';src:url('/fonts/bricolage-grotesque-latin-500-normal.ttf') format('truetype');font-weight:500;font-style:normal;}
+@font-face{font-family:'Bricolage Grotesque';src:url('/fonts/bricolage-grotesque-latin-600-normal.ttf') format('truetype');font-weight:600;font-style:normal;}
+@font-face{font-family:'Bricolage Grotesque';src:url('/fonts/bricolage-grotesque-latin-700-normal.ttf') format('truetype');font-weight:700;font-style:normal;}
+@font-face{font-family:'Bricolage Grotesque';src:url('/fonts/bricolage-grotesque-latin-800-normal.ttf') format('truetype');font-weight:800;font-style:normal;}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
   --bg:#f9f7f3;
@@ -17,9 +27,9 @@
   --ac-soft:#dce5fc;
   --ac-mid:#93adf5;
   --device-bg:#dce5fc;
-  --display:'Archivo Black',sans-serif;
-  --sans:'Archivo',system-ui,sans-serif;
-  --mono:'DM Mono',monospace;
+  --display:'Junicode',serif;
+  --sans:'Bricolage Grotesque',sans-serif;
+  --mono:'Bricolage Grotesque',sans-serif;
 }
 html{font-size:16px;scroll-behavior:smooth}
 body{font-family:var(--sans);background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased}
@@ -66,10 +76,9 @@ nav{
   color:var(--ac);margin-bottom:2.5rem;
 }
 .cs-h1{
-  font-family:var(--display);
+  font-family:var(--display);font-weight:700;
   font-size:clamp(2.8rem,7vw,6rem);
   line-height:.97;letter-spacing:-.01em;
-  text-transform:uppercase;
   margin-bottom:3rem;
 }
 .cs-h1 em{
@@ -108,10 +117,9 @@ nav{
   color:var(--ac);margin-bottom:1.5rem;
 }
 .ch-h2{
-  font-family:var(--display);
+  font-family:var(--display);font-weight:700;
   font-size:clamp(2rem,5vw,4rem);
   line-height:.97;letter-spacing:-.01em;
-  text-transform:uppercase;
   margin-bottom:2.5rem;
   max-width:18ch;
 }
@@ -158,7 +166,7 @@ nav{
 }
 .dp{}
 .dp-num{
-  font-family:var(--display);font-size:2.4rem;
+  font-family:var(--display);font-weight:700;font-size:2.4rem;
   line-height:1;display:block;margin-bottom:.3rem;
 }
 .dp-lbl{
@@ -185,8 +193,8 @@ nav{
 }
 .opt-label.chosen-lbl{color:var(--ac)}
 .opt-title{
-  font-family:var(--display);font-size:1.1rem;
-  text-transform:uppercase;margin-bottom:1rem;
+  font-family:var(--display);font-weight:700;font-size:1.1rem;
+  margin-bottom:1rem;
   line-height:1.1;
 }
 .opt-row{
@@ -308,7 +316,7 @@ nav{
 }
 .imp-item{}
 .imp-big{
-  font-family:var(--display);
+  font-family:var(--display);font-weight:700;
   font-size:clamp(4rem,10vw,8rem);
   line-height:.9;color:var(--ac);
   display:block;margin-bottom:.75rem;
@@ -330,7 +338,7 @@ nav{
   border-bottom:1px solid var(--line);
 }
 .refl-num{
-  font-family:var(--display);font-size:1.4rem;
+  font-family:var(--display);font-weight:700;font-size:1.4rem;
   color:var(--ink3);line-height:1;
 }
 .refl-title{font-size:.95rem;font-weight:500;margin-bottom:.35rem}
@@ -352,8 +360,8 @@ nav{
   color:var(--ink3);
 }
 .next-link{
-  font-family:var(--display);font-size:1rem;
-  text-transform:uppercase;letter-spacing:.02em;
+  font-family:var(--display);font-weight:700;font-size:1rem;
+  letter-spacing:.02em;
   color:var(--ac);display:flex;align-items:center;gap:.5rem;
   transition:gap .2s;
 }
@@ -365,10 +373,10 @@ nav{
   padding:6rem 4rem 5rem;
 }
 .footer-cta h2{
-  font-family:var(--display);
+  font-family:var(--display);font-weight:700;
   font-size:clamp(3rem,9vw,8rem);
   line-height:.95;letter-spacing:-.01em;
-  text-transform:uppercase;color:var(--ink3);
+  color:var(--ink3);
   margin-bottom:.5rem;
 }
 .footer-cta h2 em{
@@ -408,15 +416,28 @@ nav{
   .mockup-laptop{width:100%}
   .mockup-mobile{width:50%;margin-bottom:0}
 }
+
+/* ── BASIC SCROLL REVEAL ── */
+.cs-hero, .chapter, .impact-chapter, .end-strip, .footer-cta{
+  opacity:0; transform:translateY(24px);
+  transition:opacity .7s ease, transform .7s ease;
+}
+.cs-hero.is-visible, .chapter.is-visible, .impact-chapter.is-visible, .end-strip.is-visible, .footer-cta.is-visible{
+  opacity:1; transform:translateY(0);
+}
+@media (prefers-reduced-motion: reduce){
+  .cs-hero, .chapter, .impact-chapter, .end-strip, .footer-cta{transition:none; opacity:1; transform:none;}
+}
 </style>
+<noscript><style>.cs-hero,.chapter,.impact-chapter,.end-strip,.footer-cta{opacity:1 !important;transform:none !important;}</style></noscript>
 </head>
 <body>
 
 <nav>
-  <span class="nav-logo"><span>Anubha Kanwar</span> · EmStudio</span>
+  <span class="nav-logo"><a href="/"><span>Anubha Kanwar</span></a> · EmStudio</span>
   <div class="nav-r">
-    <a href="index.html" class="back">← All work</a>
-    <a href="mailto:anubha@example.com">Contact ↗</a>
+    <a href="/#work" class="back">← All work</a>
+    <a href="mailto:anubhakanwar2002@gmail.com">Contact ↗</a>
   </div>
 </nav>
 
@@ -452,7 +473,7 @@ nav{
 <!-- ── CHAPTER 1: THE PROBLEM ── -->
 <div class="chapter">
   <p class="ch-kicker">The problem</p>
-  <h2 class="ch-h2">THE WORKFLOW WAS FRAGMENTED, REVIEW-HEAVY, AND <em>IMPOSSIBLE TO SCALE</em></h2>
+  <h2 class="ch-h2">The workflow was fragmented, review-heavy, and <em>impossible to scale</em></h2>
 
   <div class="ch-body">
     <div>
@@ -466,19 +487,19 @@ nav{
     <div>
       <div class="dp-strip" style="flex-direction:column;gap:1.5rem;padding:0;border:none;margin:0">
         <div class="dp">
-          <span class="dp-num" style="color:var(--ac);font-size:1.3rem">MANY</span>
+          <span class="dp-num" style="color:var(--ac);font-size:1.3rem">Many</span>
           <span class="dp-lbl">Manual steps per subject before it was ready to ship</span>
         </div>
         <div class="dp">
-          <span class="dp-num" style="color:var(--ac);font-size:1.3rem">SEVERAL</span>
+          <span class="dp-num" style="color:var(--ac);font-size:1.3rem">Several</span>
           <span class="dp-lbl">Disconnected tools across the production chain</span>
         </div>
         <div class="dp">
-          <span class="dp-num" style="color:var(--ac);font-size:1.3rem">REGULAR</span>
+          <span class="dp-num" style="color:var(--ac);font-size:1.3rem">Regular</span>
           <span class="dp-lbl">Rework on QC pass — errors that shouldn't have made it that far</span>
         </div>
         <div class="dp">
-          <span class="dp-num" style="color:var(--ac);font-size:1.3rem">ZERO</span>
+          <span class="dp-num" style="color:var(--ac);font-size:1.3rem">Zero</span>
           <span class="dp-lbl">Codified quality standards. All rules lived in people's heads</span>
         </div>
       </div>
@@ -489,12 +510,12 @@ nav{
 <!-- ── CHAPTER 2: TWO STAKEHOLDERS ── -->
 <div class="chapter">
   <p class="ch-kicker">Stakeholder research</p>
-  <h2 class="ch-h2">TWO STAKEHOLDERS. <em>Completely different needs.</em> One platform.</h2>
+  <h2 class="ch-h2">Two stakeholders. <em>Completely different needs.</em> One platform.</h2>
 
   <div class="ch-body">
     <div style="border:1px solid var(--line);padding:1.75rem;border-radius:2px">
       <span style="font-family:var(--mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--ac);display:block;margin-bottom:.75rem">Stakeholder 01 · Pooja (SME)</span>
-      <p style="font-family:'Archivo Black',sans-serif;font-size:1.1rem;text-transform:uppercase;margin-bottom:1rem;line-height:1.1">THE SUBJECT EXPERT</p>
+      <p style="font-family:'Junicode',sans-serif;font-weight:700;font-size:1.1rem;margin-bottom:1rem;line-height:1.1">The subject expert</p>
       <div style="display:flex;gap:.5rem;align-items:flex-start;margin-bottom:.5rem;font-size:.82rem;color:var(--ink2);font-weight:300;line-height:1.5">→ <span>Knows exactly what correct content looks like for their domain</span></div>
       <div style="display:flex;gap:.5rem;align-items:flex-start;margin-bottom:.5rem;font-size:.82rem;color:var(--ink2);font-weight:300;line-height:1.5">→ <span>Needs inline commenting — feedback must map to specific text, not email threads</span></div>
       <div style="display:flex;gap:.5rem;align-items:flex-start;margin-bottom:.5rem;font-size:.82rem;color:var(--ink2);font-weight:300;line-height:1.5">→ <span>Wants to accept/reject changes with clear reasoning, not just red markup</span></div>
@@ -503,7 +524,7 @@ nav{
 
     <div style="border:1px solid var(--line);padding:1.75rem;border-radius:2px">
       <span style="font-family:var(--mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--ac);display:block;margin-bottom:.75rem">Stakeholder 02 · Ankita (QC Lead)</span>
-      <p style="font-family:'Archivo Black',sans-serif;font-size:1.1rem;text-transform:uppercase;margin-bottom:1rem;line-height:1.1">THE QC REVIEWER</p>
+      <p style="font-family:'Junicode',sans-serif;font-weight:700;font-size:1.1rem;margin-bottom:1rem;line-height:1.1">The QC reviewer</p>
       <div style="display:flex;gap:.5rem;align-items:flex-start;margin-bottom:.5rem;font-size:.82rem;color:var(--ink2);font-weight:300;line-height:1.5">→ <span>Reviews 100s of pages per week — needs speed, not depth on every word</span></div>
       <div style="display:flex;gap:.5rem;align-items:flex-start;margin-bottom:.5rem;font-size:.82rem;color:var(--ink2);font-weight:300;line-height:1.5">→ <span>Needs errors categorised — "Spelling" goes to writers, "Factual" goes to SMEs</span></div>
       <div style="display:flex;gap:.5rem;align-items:flex-start;margin-bottom:.5rem;font-size:.82rem;color:var(--ink2);font-weight:300;line-height:1.5">→ <span>Wants a number she can report — quality score per subject, not just "reviewed"</span></div>
@@ -519,22 +540,22 @@ nav{
 <!-- ── CHAPTER 3: PATHS REJECTED ── -->
 <div class="chapter">
   <p class="ch-kicker">Paths rejected</p>
-  <h2 class="ch-h2">WHY THE OBVIOUS SOLUTIONS <em>DIDN'T WORK</em></h2>
+  <h2 class="ch-h2">Why the obvious solutions <em>didn't work</em></h2>
 
   <div class="ch-body single" style="max-width:100%;grid-template-columns:1fr 1fr 1fr">
     <div style="padding:1.75rem;background:var(--bg);border:1px solid var(--line);border-radius:2px">
       <p style="font-family:var(--mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:#b54a2a;margin-bottom:.5rem">DROPPED</p>
-      <p style="font-family:'Archivo Black',sans-serif;font-size:1rem;text-transform:uppercase;margin-bottom:.75rem;line-height:1.1">Hire more QC reviewers</p>
+      <p style="font-family:'Junicode',sans-serif;font-weight:700;font-size:1rem;margin-bottom:.75rem;line-height:1.1">Hire more QC reviewers</p>
       <p style="font-size:.83rem;font-weight:300;color:var(--ink2);line-height:1.7">Scales linearly with content volume. Compounds at 3× scale. Doesn't solve the fragmentation problem or give anyone a shared quality standard. Treating a system problem with a headcount solution.</p>
     </div>
     <div style="padding:1.75rem;background:var(--bg);border:1px solid var(--line);border-radius:2px">
       <p style="font-family:var(--mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:#b54a2a;margin-bottom:.5rem">DROPPED</p>
-      <p style="font-family:'Archivo Black',sans-serif;font-size:1rem;text-transform:uppercase;margin-bottom:.75rem;line-height:1.1">Off-the-shelf LMS with QC module</p>
+      <p style="font-family:'Junicode',sans-serif;font-weight:700;font-size:1rem;margin-bottom:.75rem;line-height:1.1">Off-the-shelf LMS with QC module</p>
       <p style="font-size:.83rem;font-weight:300;color:var(--ink2);line-height:1.7">No existing tool handles academic content QC with subject-specific accuracy standards. Customisation cost exceeded build cost. And the SME trust requirement — "AI flagged, human reviewed" — isn't a feature any LMS vendor ships.</p>
     </div>
     <div style="padding:1.75rem;background:var(--bg);border:1px solid var(--line);border-radius:2px">
       <p style="font-family:var(--mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:#b54a2a;margin-bottom:.5rem">DROPPED</p>
-      <p style="font-family:'Archivo Black',sans-serif;font-size:1rem;text-transform:uppercase;margin-bottom:.75rem;line-height:1.1">Auto-correct everything with AI</p>
+      <p style="font-family:'Junicode',sans-serif;font-weight:700;font-size:1rem;margin-bottom:.75rem;line-height:1.1">Auto-correct everything with AI</p>
       <p style="font-size:.83rem;font-weight:300;color:var(--ink2);line-height:1.7">For factual academic content, auto-applying corrections without human sign-off is a liability. An AI changing "for some children" to "for all children" unreviewed is academically wrong. SME trust evaporates immediately.</p>
     </div>
   </div>
@@ -543,7 +564,7 @@ nav{
 <!-- ── CHAPTER 4: THE DECISION ── -->
 <div class="chapter">
   <p class="ch-kicker">The decision</p>
-  <h2 class="ch-h2">BUILD THE PLATFORM. CODE THE ENGINE. <em>Ship it myself.</em></h2>
+  <h2 class="ch-h2">Build the platform. Code the engine. <em>Ship it myself.</em></h2>
 
   <div class="ch-body">
     <div>
@@ -592,7 +613,7 @@ nav{
 <!-- ── CHAPTER 5: THE WORK ── -->
 <div class="chapter">
   <p class="ch-kicker">The work</p>
-  <h2 class="ch-h2">SEVEN STAGES. ONE PLATFORM. <em>AI everywhere.</em></h2>
+  <h2 class="ch-h2">Seven stages. One platform. <em>AI everywhere.</em></h2>
 
   <div class="ch-body wide">
     <p class="ch-p" style="max-width:70ch">EmStudio replaces five disconnected tools with one interface. Every stage feeds the next. The dashboard gives the whole team one source of truth — quality score, team velocity, and per-stage progress, live.</p>
@@ -638,7 +659,7 @@ nav{
 <!-- ── CHAPTER 6: QC STUDIO ── -->
 <div class="chapter" style="background:#f2f5fe">
   <p class="ch-kicker">QC Studio · built by me</p>
-  <h2 class="ch-h2">THE ENGINE I CODED <em>from scratch.</em></h2>
+  <h2 class="ch-h2">The engine I coded <em>from scratch.</em></h2>
 
   <div class="ch-body">
     <div>
@@ -652,23 +673,23 @@ nav{
       <div style="display:flex;flex-direction:column;gap:.75rem">
         <div style="padding:1.25rem;background:var(--bg);border-radius:8px;display:flex;justify-content:space-between;align-items:center">
           <span style="font-size:.85rem;font-weight:500">Spellings</span>
-          <span style="font-family:var(--display);font-size:1.4rem;color:var(--ac)">16</span>
+          <span style="font-family:var(--display);font-weight:700;font-size:1.4rem;color:var(--ac)">16</span>
         </div>
         <div style="padding:1.25rem;background:var(--bg);border-radius:8px;display:flex;justify-content:space-between;align-items:center">
           <span style="font-size:.85rem;font-weight:500">Grammar</span>
-          <span style="font-family:var(--display);font-size:1.4rem;color:var(--ac)">10</span>
+          <span style="font-family:var(--display);font-weight:700;font-size:1.4rem;color:var(--ac)">10</span>
         </div>
         <div style="padding:1.25rem;background:var(--bg);border-radius:8px;display:flex;justify-content:space-between;align-items:center">
           <span style="font-size:.85rem;font-weight:500">Factual</span>
-          <span style="font-family:var(--display);font-size:1.4rem;color:var(--ac)">12</span>
+          <span style="font-family:var(--display);font-weight:700;font-size:1.4rem;color:var(--ac)">12</span>
         </div>
         <div style="padding:1.25rem;background:var(--bg);border-radius:8px;display:flex;justify-content:space-between;align-items:center">
           <span style="font-size:.85rem;font-weight:500">Image relevancy</span>
-          <span style="font-family:var(--display);font-size:1.4rem;color:var(--ac)">5</span>
+          <span style="font-family:var(--display);font-weight:700;font-size:1.4rem;color:var(--ac)">5</span>
         </div>
         <div style="padding:1.25rem;background:var(--bg);border-radius:8px;display:flex;justify-content:space-between;align-items:center">
           <span style="font-size:.85rem;font-weight:500">Miscellaneous</span>
-          <span style="font-family:var(--display);font-size:1.4rem;color:var(--ac)">11</span>
+          <span style="font-family:var(--display);font-weight:700;font-size:1.4rem;color:var(--ac)">11</span>
         </div>
       </div>
     </div>
@@ -708,7 +729,7 @@ nav{
 <!-- ── CHAPTER 7: IMPACT ── -->
 <div class="impact-chapter">
   <p class="ch-kicker">Impact</p>
-  <h2 class="ch-h2" style="max-width:100%">WHAT CHANGED</h2>
+  <h2 class="ch-h2" style="max-width:100%">What changed</h2>
 
   <div class="impact-nums">
     <div class="imp-item">
@@ -717,17 +738,17 @@ nav{
       <p class="imp-ctx">From several disconnected tools to one interface. Subject Creation through Academic Approval, in a single system instead of scattered across email, spreadsheets, and separate editors.</p>
     </div>
     <div class="imp-item">
-      <span class="imp-big">ONE</span>
+      <span class="imp-big">One</span>
       <p class="imp-what">Screen, every role</p>
       <p class="imp-ctx">SME, illustrator, QC reviewer, and academic head each get a dashboard built for their job — but it's the same system underneath, so nobody has to chase status across tools anymore.</p>
     </div>
     <div class="imp-item">
-      <span class="imp-big">REAL</span>
+      <span class="imp-big">Real</span>
       <p class="imp-what">Categorised, not guessed</p>
       <p class="imp-ctx">Every QC issue now carries a category and a suggested fix instead of living only in a reviewer's memory — spelling and grammar route to writers, factual issues route to SMEs, automatically.</p>
     </div>
     <div class="imp-item">
-      <span class="imp-big">LIVE</span>
+      <span class="imp-big">Live</span>
       <p class="imp-what">In active use</p>
       <p class="imp-ctx">This isn't a concept file. It's the system Emversity's content team runs subjects through today — I don't have a clean before/after metric yet, but the team's day-to-day tells the story: this is genuinely how the work gets done now.</p>
     </div>
@@ -737,7 +758,7 @@ nav{
 <!-- ── CHAPTER 8: REFLECTION ── -->
 <div class="chapter">
   <p class="ch-kicker">Reflection</p>
-  <h2 class="ch-h2">THREE THINGS I'D <em>do differently.</em></h2>
+  <h2 class="ch-h2">Three things I'd <em>do differently.</em></h2>
 
   <div class="refl-list">
     <div class="refl-item">
@@ -776,15 +797,11 @@ nav{
   <div class="footer-links">
     <div class="fl-item">
       <span class="fl-label">Email</span>
-      <a class="fl-val" href="mailto:anubha@example.com">anubha@example.com</a>
+      <a class="fl-val" href="mailto:anubhakanwar2002@gmail.com">anubhakanwar2002@gmail.com</a>
     </div>
     <div class="fl-item">
       <span class="fl-label">LinkedIn</span>
-      <a class="fl-val" href="https://linkedin.com/in/anubhakanwar" target="_blank">linkedin.com/in/anubhakanwar</a>
-    </div>
-    <div class="fl-item">
-      <span class="fl-label">Portfolio</span>
-      <a class="fl-val" href="index.html">anubhakanwar.com</a>
+      <a class="fl-val" href="https://www.linkedin.com/in/anubha-kanwar-98631b227/?skipRedirect=true" target="_blank">linkedin.com/in/anubha-kanwar</a>
     </div>
     <div class="fl-item">
       <span class="fl-label">Based in</span>
@@ -792,6 +809,23 @@ nav{
     </div>
   </div>
 </div>
+
+<script>
+  (function(){
+    if (!('IntersectionObserver' in window)) return;
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting){
+          entry.target.classList.add('is-visible');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.cs-hero, .chapter, .impact-chapter, .end-strip, .footer-cta').forEach(function(el){
+      obs.observe(el);
+    });
+  })();
+</script>
 
 </body>
 </html>

@@ -4,8 +4,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>JSP — Anubha Kanwar</title>
-<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:ital,wght@0,300;0,400;0,500;0,600;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
+@font-face{font-family:'Junicode';src:url('/fonts/Junicode.ttf') format('truetype');font-weight:400;font-style:normal;}
+@font-face{font-family:'Junicode';src:url('/fonts/Junicode-Bold.ttf') format('truetype');font-weight:700;font-style:normal;}
+@font-face{font-family:'Junicode';src:url('/fonts/Junicode-Italic.ttf') format('truetype');font-weight:400;font-style:italic;}
+@font-face{font-family:'Junicode';src:url('/fonts/Junicode-BoldItalic.ttf') format('truetype');font-weight:700;font-style:italic;}
+@font-face{font-family:'Bricolage Grotesque';src:url('/fonts/bricolage-grotesque-latin-200-normal.ttf') format('truetype');font-weight:200;font-style:normal;}
+@font-face{font-family:'Bricolage Grotesque';src:url('/fonts/bricolage-grotesque-latin-300-normal.ttf') format('truetype');font-weight:300;font-style:normal;}
+@font-face{font-family:'Bricolage Grotesque';src:url('/fonts/bricolage-grotesque-latin-400-normal.ttf') format('truetype');font-weight:400;font-style:normal;}
+@font-face{font-family:'Bricolage Grotesque';src:url('/fonts/bricolage-grotesque-latin-500-normal.ttf') format('truetype');font-weight:500;font-style:normal;}
+@font-face{font-family:'Bricolage Grotesque';src:url('/fonts/bricolage-grotesque-latin-600-normal.ttf') format('truetype');font-weight:600;font-style:normal;}
+@font-face{font-family:'Bricolage Grotesque';src:url('/fonts/bricolage-grotesque-latin-700-normal.ttf') format('truetype');font-weight:700;font-style:normal;}
+@font-face{font-family:'Bricolage Grotesque';src:url('/fonts/bricolage-grotesque-latin-800-normal.ttf') format('truetype');font-weight:800;font-style:normal;}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
   --bg:#0f0f0f;
@@ -18,9 +28,9 @@
   --ac:#4ade80;
   --ac-dim:#22c55e;
   --err:#f87171;
-  --display:'Archivo Black',sans-serif;
-  --sans:'Archivo',system-ui,sans-serif;
-  --mono:'DM Mono',monospace;
+  --display:'Junicode',serif;
+  --sans:'Bricolage Grotesque',sans-serif;
+  --mono:'Bricolage Grotesque',sans-serif;
 }
 html{scroll-behavior:smooth}
 body{font-family:var(--sans);background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
@@ -45,7 +55,7 @@ nav{
 .sect{max-width:1080px;margin:0 auto;padding:5rem 4rem;border-bottom:1px solid var(--border)}
 .sect.alt{background:var(--surface2)}
 .kicker{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--ac);margin-bottom:1.25rem}
-.h2{font-family:var(--display);font-size:clamp(1.9rem,4.4vw,3.2rem);line-height:1.05;text-transform:uppercase;letter-spacing:-.01em;max-width:22ch;margin-bottom:2rem}
+.h2{font-family:var(--display);font-weight:700;font-size:clamp(1.9rem,4.4vw,3.2rem);line-height:1.05;letter-spacing:-.01em;max-width:22ch;margin-bottom:2rem}
 .h2 em{color:var(--ac);font-style:normal}
 .p{font-size:.93rem;font-weight:300;color:var(--text2);line-height:1.9;margin-bottom:1rem;max-width:64ch}
 .p strong{color:var(--text);font-weight:500}
@@ -72,8 +82,8 @@ nav{
 .term-line .prompt{color:var(--ac);margin-right:.6rem}
 .term-out{color:var(--text3);margin-bottom:.6rem}
 .term-hero-title{
-  font-family:var(--display);color:var(--ac);
-  font-size:clamp(2.6rem,7vw,5.2rem);line-height:.95;text-transform:uppercase;
+  font-family:var(--display);font-weight:700;color:var(--ac);
+  font-size:clamp(2.6rem,7vw,5.2rem);line-height:.95;
   margin:1.5rem 0 .5rem;
 }
 .term-hero-sub{font-family:var(--sans);font-size:1rem;font-weight:300;color:var(--text2);max-width:56ch;margin-bottom:2rem}
@@ -86,14 +96,14 @@ nav{
 .prob-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);margin-top:2rem}
 .prob-cell{background:var(--bg);padding:2rem 1.75rem}
 .prob-n{font-family:var(--mono);font-size:9px;color:var(--ac);display:block;margin-bottom:.75rem}
-.prob-t{font-family:var(--display);font-size:1rem;text-transform:uppercase;margin-bottom:.75rem;line-height:1.2}
+.prob-t{font-family:var(--display);font-weight:700;font-size:1rem;margin-bottom:.75rem;line-height:1.2}
 .prob-b{font-size:.82rem;font-weight:300;color:var(--text2);line-height:1.7}
 
 /* LAYERS FLOW */
 .layer-flow{display:flex;align-items:stretch;gap:1rem;margin-top:2rem;flex-wrap:wrap}
 .layer-card{flex:1;min-width:220px;border:1px solid var(--border);border-radius:8px;padding:1.75rem;background:var(--surface)}
-.layer-n{font-family:var(--display);color:var(--ac);font-size:1.3rem;margin-bottom:.75rem}
-.layer-t{font-family:var(--display);font-size:1rem;text-transform:uppercase;margin-bottom:.6rem}
+.layer-n{font-family:var(--display);font-weight:700;color:var(--ac);font-size:1.3rem;margin-bottom:.75rem}
+.layer-t{font-family:var(--display);font-weight:700;font-size:1rem;margin-bottom:.6rem}
 .layer-goal{font-family:var(--mono);font-size:.72rem;color:var(--ac-dim);line-height:1.6}
 .layer-arrow{display:flex;align-items:center;color:var(--text3);font-family:var(--mono);font-size:1.3rem;padding:0 .25rem}
 
@@ -126,7 +136,7 @@ nav{
 .shot-pair .browser{margin:0}
 .work-block{margin-bottom:3rem}
 .work-tag{font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--ac);display:block;margin-bottom:.6rem}
-.work-h{font-family:var(--display);font-size:1.2rem;text-transform:uppercase;margin-bottom:.75rem}
+.work-h{font-family:var(--display);font-weight:700;font-size:1.2rem;margin-bottom:.75rem}
 
 /* BUG > FIX BLOCKS */
 .bugfix{border:1px solid var(--border);border-radius:8px;margin-bottom:1.25rem;overflow:hidden}
@@ -154,30 +164,43 @@ nav{
 }
 
 /* FOOTER */
-.foot{max-width:1080px;margin:0 auto;padding:6rem 4rem 4rem}
-.foot h2{font-family:var(--display);font-size:clamp(2.4rem,7vw,5.5rem);line-height:.95;text-transform:uppercase;color:var(--text3)}
-.foot h2 em{font-family:var(--sans);font-style:italic;font-weight:300;color:var(--ac);text-transform:none}
-.foot-links{display:flex;gap:3rem;margin-top:3rem;border-top:1px solid var(--border);padding-top:2rem;flex-wrap:wrap}
-.fl-lbl{font-family:var(--mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--text3);display:block;margin-bottom:.35rem}
+.footer-cta{max-width:1080px;margin:0 auto;padding:6rem 4rem 4rem}
+.footer-cta h2{font-family:var(--display);font-weight:700;font-size:clamp(2.4rem,7vw,5.5rem);line-height:.95;color:var(--text3)}
+.footer-cta h2 em{font-family:var(--sans);font-style:italic;font-weight:300;color:var(--ac);text-transform:none}
+.footer-links{display:flex;gap:3rem;margin-top:3rem;border-top:1px solid var(--border);padding-top:2rem;flex-wrap:wrap}
+.fl-item{}
+.fl-label{font-family:var(--mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--text3);display:block;margin-bottom:.35rem}
 .fl-val{font-family:var(--mono);font-size:10px;letter-spacing:.06em;color:var(--ac)}
 
 @media(max-width:900px){
-  nav,.sect,.term,.foot{padding-left:1.5rem;padding-right:1.5rem}
+  nav,.sect,.term,.footer-cta{padding-left:1.5rem;padding-right:1.5rem}
   .prob-grid,.term-meta{grid-template-columns:1fr}
   .layer-flow{flex-direction:column}
   .layer-arrow{transform:rotate(90deg);padding:.5rem 0;align-self:center}
   .log-entry{grid-template-columns:1fr;gap:.4rem}
   .shot-pair{grid-template-columns:1fr}
 }
+
+.term, .sect, .footer-cta{
+  opacity:0; transform:translateY(24px);
+  transition:opacity .7s ease, transform .7s ease;
+}
+.term.is-visible, .sect.is-visible, .footer-cta.is-visible{
+  opacity:1; transform:translateY(0);
+}
+@media (prefers-reduced-motion: reduce){
+  .term, .sect, .footer-cta{transition:none; opacity:1; transform:none;}
+}
 </style>
+<noscript><style>.term,.sect,.footer-cta{opacity:1 !important;transform:none !important;}</style></noscript>
 </head>
 <body>
 
 <nav>
-  <span class="nav-logo"><strong>JSP</strong> — Anubha Kanwar</span>
+  <span class="nav-logo"><strong>JSP</strong> — <a href="/">Anubha Kanwar</a></span>
   <div class="nav-r">
-    <a href="index.html">← All work</a>
-    <a href="https://jsp-mvp.vercel.app" target="_blank" rel="noopener">Live app ↗</a>
+    <a href="/#work" class="back">← All work</a>
+    <a href="mailto:anubhakanwar2002@gmail.com">Contact ↗</a>
   </div>
 </nav>
 
@@ -212,7 +235,7 @@ nav{
 <!-- THE PROBLEM -->
 <div class="sect">
   <p class="kicker">The problem</p>
-  <h2 class="h2">JOB SEARCHING BREAKS IN <em>THREE PLACES</em></h2>
+  <h2 class="h2">Job searching breaks in <em>three places</em></h2>
   <p class="p">The idea came from personal frustration — I was targeting AI PM roles and found the entire process exhausting and disorganised. Most tools help you find a job. None of them help you run a systematic outreach campaign and track it like a pipeline — which is exactly what a serious search requires, especially for roles that never get posted.</p>
   <div class="prob-grid">
     <div class="prob-cell">
@@ -236,7 +259,7 @@ nav{
 <!-- THREE LAYERS -->
 <div class="sect alt">
   <p class="kicker">Architecture</p>
-  <h2 class="h2">THREE LAYERS, <em>ONE CLOSED LOOP</em></h2>
+  <h2 class="h2">Three layers, <em>one closed loop</em></h2>
   <p class="p">Mapped out from day one as three independent layers. A rule I held throughout: work on one branch at a time, and don't design the next one while building the current one.</p>
   <div class="layer-flow">
     <div class="layer-card">
@@ -263,7 +286,7 @@ nav{
 <!-- BUILD LOG -->
 <div class="sect">
   <p class="kicker">Build log</p>
-  <h2 class="h2">TWENTY DAYS, <em>FIVE MILESTONES</em></h2>
+  <h2 class="h2">Twenty days, <em>five milestones</em></h2>
   <p class="p">Not a full commit history — the five points where the product actually changed shape.</p>
   <div class="log">
     <div class="log-entry">
@@ -307,7 +330,7 @@ nav{
 <!-- WHAT IT DOES -->
 <div class="sect alt">
   <p class="kicker">What it does</p>
-  <h2 class="h2">THE THREE LAYERS, <em>LIVE</em></h2>
+  <h2 class="h2">The three layers, <em>live</em></h2>
 
   <div class="work-block">
     <span class="work-tag">Layer 1 — Outreach</span>
@@ -359,7 +382,7 @@ nav{
 <!-- PROBLEMS FACED -->
 <div class="sect">
   <p class="kicker">Problems faced</p>
-  <h2 class="h2">THREE THINGS THAT <em>BROKE, FOR REAL</em></h2>
+  <h2 class="h2">Three things that <em>broke, for real</em></h2>
   <div class="bugfix">
     <div class="bug-line"><span class="bf-tag">BUG</span><span class="bf-txt">Hunter.io's database skews heavily US/EU. For Indian startups — CRED, Zepto, Razorpay — it frequently returned <b>zero results</b>, silently killing the app's core value for the companies users actually cared about.</span></div>
     <div class="fix-line"><span class="bf-tag">FIX</span><span class="bf-txt">Built a mock pool of 20 Indian tech companies with realistic recruiter data as a labelled fallback — never pretending pattern-matched contacts are verified ones. Long-term fix identified but deferred: Apollo.io or the Greenhouse/Lever public ATS APIs, once there's traction to justify the cost.</span></div>
@@ -377,7 +400,7 @@ nav{
 <!-- SCOPE CUT -->
 <div class="sect alt">
   <p class="kicker">What I deliberately left out</p>
-  <h2 class="h2">NOT MISSING. <em>DECIDED.</em></h2>
+  <h2 class="h2">Not missing. <em>Decided.</em></h2>
   <p class="p">Every item below was considered, discussed with myself, and cut on purpose — the discipline that kept a solo 20-day build from turning into a project that builds forever and ships never.</p>
   <div class="scope-list">
     <div class="scope-row"><span class="scope-mark">✕</span><div><p class="scope-t">Bulk outreach</p><p class="scope-b">No sending to 50 recruiters at once. Mass outreach is impersonal and risks the relationships this tool exists to build.</p></div></div>
@@ -390,22 +413,37 @@ nav{
 <!-- REFLECTION -->
 <div class="sect">
   <p class="kicker">Honest reflection</p>
-  <h2 class="h2">THE CODE WASN'T <em>THE HARD PART</em></h2>
+  <h2 class="h2">The code wasn't <em>the hard part</em></h2>
   <p class="p">Twenty days. No prior Next.js or Supabase experience. Three product layers, authentication, and a live deployment.</p>
   <p class="p">The technical implementation was AI-assisted — Claude Code, with instruction files I wrote and refined for every branch. That's transparent and intentional: I'm a PM, not an engineer, and using AI for implementation while owning every product and architecture decision was the right division of labour for building this alone.</p>
   <div class="refl-quote">What mattered was the decision-making — what to build in this version and what to skip, whether to add auth before or after the product worked, whether to scrape LinkedIn or find a legitimate path, how to be honest with users about mock data instead of hiding it behind confident UI. Those are PM decisions. The judgment came from ten months on the job. The code came from twenty days of finally not being afraid of it.</div>
   <p class="p">It isn't perfect. Recruiter data is weak for Indian companies. The job feed is limited by its free sources. I named those limits instead of hiding them — in the product, and here.</p>
 </div>
 
-<div class="foot">
+<div class="footer-cta">
   <h2>Give me the<br>messy <em>problem.</em></h2>
-  <div class="foot-links">
-    <div><span class="fl-lbl">Email</span><a class="fl-val" href="mailto:hello@example.com">hello@example.com</a></div>
-    <div><span class="fl-lbl">Live app</span><a class="fl-val" href="https://jsp-mvp.vercel.app" target="_blank" rel="noopener">jsp-mvp.vercel.app</a></div>
-    <div><span class="fl-lbl">Based in</span><span class="fl-val" style="cursor:default">Bengaluru, India</span></div>
-    <div><span class="fl-lbl">Back to</span><a class="fl-val" href="index.html">All work →</a></div>
+  <div class="footer-links">
+    <div class="fl-item"><span class="fl-label">Email</span><a class="fl-val" href="mailto:anubhakanwar2002@gmail.com">anubhakanwar2002@gmail.com</a></div>
+    <div class="fl-item"><span class="fl-label">LinkedIn</span><a class="fl-val" href="https://www.linkedin.com/in/anubha-kanwar-98631b227/?skipRedirect=true" target="_blank">linkedin.com/in/anubha-kanwar</a></div>
+    <div class="fl-item"><span class="fl-label">Based in</span><span class="fl-val" style="cursor:default">Bengaluru, India</span></div>
   </div>
 </div>
 
+<script>
+  (function(){
+    if (!('IntersectionObserver' in window)) return;
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting){
+          entry.target.classList.add('is-visible');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.term, .sect, .footer-cta').forEach(function(el){
+      obs.observe(el);
+    });
+  })();
+</script>
 </body>
 </html>

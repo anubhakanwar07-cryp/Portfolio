@@ -4,9 +4,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>VR Anatomy — Emverse · Case Study</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Source+Serif+4:ital,wght@0,400;0,500;1,400;1,500&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
+  @font-face{font-family:'Junicode';src:url('/fonts/Junicode.ttf') format('truetype');font-weight:400;font-style:normal;}
+  @font-face{font-family:'Junicode';src:url('/fonts/Junicode-Bold.ttf') format('truetype');font-weight:700;font-style:normal;}
+  @font-face{font-family:'Junicode';src:url('/fonts/Junicode-Italic.ttf') format('truetype');font-weight:400;font-style:italic;}
+  @font-face{font-family:'Junicode';src:url('/fonts/Junicode-BoldItalic.ttf') format('truetype');font-weight:700;font-style:italic;}
+  @font-face{font-family:'Bricolage Grotesque';src:url('/fonts/bricolage-grotesque-latin-200-normal.ttf') format('truetype');font-weight:200;font-style:normal;}
+  @font-face{font-family:'Bricolage Grotesque';src:url('/fonts/bricolage-grotesque-latin-300-normal.ttf') format('truetype');font-weight:300;font-style:normal;}
+  @font-face{font-family:'Bricolage Grotesque';src:url('/fonts/bricolage-grotesque-latin-400-normal.ttf') format('truetype');font-weight:400;font-style:normal;}
+  @font-face{font-family:'Bricolage Grotesque';src:url('/fonts/bricolage-grotesque-latin-500-normal.ttf') format('truetype');font-weight:500;font-style:normal;}
+  @font-face{font-family:'Bricolage Grotesque';src:url('/fonts/bricolage-grotesque-latin-600-normal.ttf') format('truetype');font-weight:600;font-style:normal;}
+  @font-face{font-family:'Bricolage Grotesque';src:url('/fonts/bricolage-grotesque-latin-700-normal.ttf') format('truetype');font-weight:700;font-style:normal;}
+  @font-face{font-family:'Bricolage Grotesque';src:url('/fonts/bricolage-grotesque-latin-800-normal.ttf') format('truetype');font-weight:800;font-style:normal;}
   :root{
     --cream: #f9f7f3;
     --cream-deep: #f3efe6;
@@ -34,7 +43,7 @@
   body{
     background:var(--cream);
     color:var(--ink);
-    font-family:'Archivo', sans-serif;
+    font-family:'Bricolage Grotesque', sans-serif;
     font-size:16px;
     line-height:1.6;
     -webkit-font-smoothing:antialiased;
@@ -44,19 +53,19 @@
   a{color:inherit;}
 
   .display{
-    font-family:'Archivo Black', sans-serif;
-    text-transform:uppercase;
+    font-family:'Junicode', sans-serif;
+    font-weight:700;
     letter-spacing:-0.01em;
     line-height:0.98;
   }
   .serif-em{
-    font-family:'Source Serif 4', serif;
+    font-family:'Junicode', serif;
     font-style:italic; font-weight:400;
     text-transform:none; letter-spacing:0;
   }
-  .mono{font-family:'JetBrains Mono', monospace;}
+  .mono{font-family:'Bricolage Grotesque', monospace;}
   .eyebrow{
-    font-family:'JetBrains Mono', monospace;
+    font-family:'Bricolage Grotesque', monospace;
     font-size:11.5px; letter-spacing:0.14em;
     text-transform:uppercase; color:var(--ink-faint);
   }
@@ -72,7 +81,8 @@
     display:flex; align-items:center; justify-content:space-between;
   }
   @media (max-width:720px){ .topbar-inner{padding:14px 22px;} }
-  .brand{font-family:'Archivo Black',sans-serif; font-size:14px; text-transform:uppercase;}
+  .brand{font-family:'Junicode',sans-serif; font-weight:700; font-size:14px;}
+  .brand a{color:inherit; text-decoration:none;}
   .brand span{color:var(--vr);}
   .topnav-links{display:flex; gap:26px; font-size:13px; color:var(--ink-soft);}
   .topnav-links a{text-decoration:none; transition:color .15s;}
@@ -85,7 +95,7 @@
   .hero h1{font-size:clamp(38px, 5.8vw, 74px); margin-bottom:8px;}
   .hero h1 .accent{color:var(--vr);}
   .hero-serif{
-    font-family:'Source Serif 4',serif; font-style:italic; font-weight:500;
+    font-family:'Junicode',serif; font-style:italic; font-weight:500;
     font-size:clamp(20px,2.6vw,32px);
     margin:14px 0 28px;
     color:var(--ink-soft);
@@ -109,28 +119,27 @@
     .meta-item + .meta-item{padding-left:0;}
     .meta-item:nth-child(2n){padding-left:16px;}
   }
-  .meta-label{font-family:'JetBrains Mono',monospace; font-size:10.5px; text-transform:uppercase; letter-spacing:.1em; color:var(--ink-faint); margin-bottom:8px;}
+  .meta-label{font-family:'Bricolage Grotesque',monospace; font-size:10.5px; text-transform:uppercase; letter-spacing:.1em; color:var(--ink-faint); margin-bottom:8px;}
   .meta-value{font-size:14.5px; font-weight:600; line-height:1.45;}
 
   section{padding:64px 0;}
   .rule{border:none; border-top:1px solid var(--rule); margin:0;}
   .section-head{margin-bottom:36px;}
   .section-num{
-    font-family:'JetBrains Mono',monospace;
+    font-family:'Bricolage Grotesque',monospace;
     font-size:12px; letter-spacing:.08em;
     color:var(--vr); display:block; margin-bottom:10px;
-    text-transform:uppercase;
   }
   h2.section-title{
-    font-family:'Archivo Black',sans-serif;
-    text-transform:uppercase;
+    font-family:'Junicode',sans-serif;
+    font-weight:700;
     font-size:clamp(26px,3.4vw,40px);
     line-height:1.05; max-width:840px;
     letter-spacing:-0.005em;
   }
   .lede{max-width:680px; font-size:17px; color:var(--ink-soft); margin-top:16px;}
   .pull{
-    font-family:'Source Serif 4',serif; font-style:italic;
+    font-family:'Junicode',serif; font-style:italic;
     font-size:clamp(21px,2.5vw,28px); line-height:1.4;
     max-width:760px;
     padding:6px 0 6px 26px;
@@ -146,15 +155,15 @@
     padding:26px 28px;
   }
   .work-num{
-    font-family:'JetBrains Mono',monospace;
-    font-size:11px; letter-spacing:.1em; text-transform:uppercase;
+    font-family:'Bricolage Grotesque',monospace;
+    font-size:11px; letter-spacing:.1em;
     color:var(--vr); font-weight:700; display:block; margin-bottom:10px;
   }
   .work h3{font-size:17px; font-weight:700; margin-bottom:10px;}
   .work p{font-size:14.5px; color:var(--ink-soft);}
   .work .mono-tags{margin-top:14px; display:flex; flex-wrap:wrap; gap:8px;}
   .mono-tag{
-    font-family:'JetBrains Mono',monospace;
+    font-family:'Bricolage Grotesque',monospace;
     font-size:10.5px; letter-spacing:.04em;
     background:var(--vr-tint); color:var(--vr-deep);
     padding:4px 10px; border-radius:4px;
@@ -174,7 +183,7 @@
   .door-cap{
     display:flex; justify-content:space-between; align-items:baseline;
     padding:12px 6px 2px;
-    font-family:'JetBrains Mono',monospace; font-size:11.5px; color:var(--ink-faint);
+    font-family:'Bricolage Grotesque',monospace; font-size:11.5px; color:var(--ink-faint);
   }
   .door-cap .tag{font-weight:700; color:var(--vr-deep);}
 
@@ -188,7 +197,7 @@
   .void h2.section-title{color:#fff;}
   .void .lede{color:var(--void-faint);}
   .void-enter{
-    font-family:'JetBrains Mono',monospace;
+    font-family:'Bricolage Grotesque',monospace;
     font-size:11px; letter-spacing:.2em; text-transform:uppercase;
     color:var(--void-faint);
     text-align:center;
@@ -223,7 +232,7 @@
   .carousel-cap{
     display:flex; justify-content:space-between; align-items:baseline;
     padding:14px 6px 4px; gap:14px;
-    font-family:'JetBrains Mono',monospace; font-size:11.5px; color:var(--void-faint);
+    font-family:'Bricolage Grotesque',monospace; font-size:11.5px; color:var(--void-faint);
   }
   .carousel-cap .tag{font-weight:700; color:var(--vr-bright);}
   .carousel-dots{display:flex; justify-content:center; gap:8px; padding-top:14px;}
@@ -249,7 +258,7 @@
   }
   .panel-title{font-weight:700; font-size:15px; color:#fff;}
   .panel-reset{
-    font-family:'JetBrains Mono',monospace; font-size:10px;
+    font-family:'Bricolage Grotesque',monospace; font-size:10px;
     border:1px solid var(--void-rule); color:var(--void-faint);
     padding:4px 12px; border-radius:14px;
   }
@@ -267,12 +276,12 @@
   }
   .panel-row.on .toggle{background:var(--vr-bright); border-color:var(--vr-bright);}
   .panel-note{
-    font-family:'JetBrains Mono',monospace; font-size:10.5px;
+    font-family:'Bricolage Grotesque',monospace; font-size:10.5px;
     color:var(--void-faint); margin-top:14px; line-height:1.6;
   }
 
   .modes h3{
-    font-family:'Archivo Black',sans-serif; text-transform:uppercase;
+    font-family:'Junicode',sans-serif; font-weight:700;
     font-size:19px; color:#fff; margin-bottom:18px;
   }
   .mode-row{
@@ -299,7 +308,7 @@
   .mode-desc{font-size:13.5px; color:var(--void-faint);}
 
   .void-exit{
-    font-family:'JetBrains Mono',monospace;
+    font-family:'Bricolage Grotesque',monospace;
     font-size:11px; letter-spacing:.2em; text-transform:uppercase;
     color:var(--void-faint);
     text-align:center;
@@ -317,7 +326,7 @@
   .decision-a{font-size:14.5px; color:var(--ink-soft);}
   .decision-tradeoff{
     display:inline-block;
-    font-family:'JetBrains Mono',monospace;
+    font-family:'Bricolage Grotesque',monospace;
     font-size:10.5px; letter-spacing:.06em; text-transform:uppercase;
     color:var(--vr-deep); background:var(--vr-tint);
     padding:3px 8px; border-radius:3px; margin-top:10px;
@@ -330,29 +339,65 @@
   .diff-card h4{font-size:15.5px; margin-bottom:8px;}
   .diff-card p{font-size:14.5px; color:var(--ink-soft);}
 
-  .next-strip{background:var(--ink); color:var(--cream); padding:60px 0; margin-top:40px;}
-  .next-strip .wrap{display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:20px;}
-  .next-strip .eyebrow{color:#9d968a;}
-  .next-strip h3{font-family:'Archivo Black',sans-serif; font-size:26px; text-transform:uppercase; margin-top:8px;}
-  .next-links{display:flex; gap:14px; flex-wrap:wrap;}
-  .next-link{
-    border:1px solid #4a453c; padding:10px 18px; border-radius:24px;
-    font-size:13.5px; text-decoration:none; color:var(--cream); transition:.15s;
-  }
-  .next-link:hover{background:var(--cream); color:var(--ink);}
   footer{padding:26px 0 40px; font-size:12.5px; color:var(--ink-faint); display:flex; justify-content:space-between;}
+
+  /* ── FOOTER CTA (shared pattern, matches emstudio.html) ── */
+  .footer-cta{max-width:1140px; margin:0 auto; padding:6rem 40px 5rem;}
+  @media (max-width:720px){ .footer-cta{padding:6rem 22px 5rem;} }
+  .footer-cta h2{
+    font-family:'Junicode',serif; font-weight:700;
+    font-size:clamp(3rem,9vw,8rem);
+    line-height:.95; letter-spacing:-.01em;
+    color:var(--ink-faint);
+    margin-bottom:.5rem;
+  }
+  .footer-cta h2 em{
+    font-family:'Junicode',serif; font-style:italic;
+    font-weight:400; color:var(--vr);
+    text-transform:none;
+  }
+  .footer-links{
+    display:flex; gap:3rem; margin-top:3rem;
+    border-top:1px solid var(--rule); padding-top:2rem;
+    flex-wrap:wrap;
+  }
+  .fl-item{}
+  .fl-label{
+    font-family:'Bricolage Grotesque',sans-serif; font-size:9px;
+    letter-spacing:.14em; text-transform:uppercase;
+    color:var(--ink-faint); display:block; margin-bottom:.3rem;
+  }
+  .fl-val{
+    font-family:'Bricolage Grotesque',sans-serif; font-size:10px;
+    letter-spacing:.08em; text-transform:uppercase;
+    color:var(--vr);
+  }
+
+  /* ── BASIC SCROLL REVEAL ── */
+  section, .footer-cta{
+    opacity:0; transform:translateY(24px);
+    transition:opacity .7s ease, transform .7s ease;
+  }
+  section.is-visible, .footer-cta.is-visible{
+    opacity:1; transform:translateY(0);
+  }
+  @media (prefers-reduced-motion: reduce){
+    section, .footer-cta{transition:none; opacity:1; transform:none;}
+  }
 </style>
+<noscript><style>section,.footer-cta{opacity:1 !important;transform:none !important;}</style></noscript>
 </head>
 <body>
 
 <div class="topbar">
   <div class="topbar-inner">
-    <div class="brand">ANUBHA KANWAR <span>· VR ANATOMY</span></div>
-    <div class="topnav-links"><a href="index.html">← All work</a>
+    <div class="brand"><a href="/">Anubha Kanwar</a> <span>· VR Anatomy</span></div>
+    <div class="topnav-links"><a href="/#work">← All work</a>
       <a href="#work">My side of the build</a>
       <a href="#doors">Two doors</a>
       <a href="#inside">Inside the headset</a>
       <a href="#decisions">Decisions</a>
+      <a href="mailto:anubhakanwar2002@gmail.com">Contact ↗</a>
     </div>
   </div>
 </div>
@@ -363,7 +408,7 @@
       <span class="dot"></span>
       <span class="eyebrow">0→1 delivery · Emverse · Meta Quest + Web · 2024–25</span>
     </div>
-    <h1 class="display">SCOPED ON PAPER.<br><span class="accent">SHIPPED IN 3D.</span></h1>
+    <h1 class="display">Scoped on paper.<br><span class="accent">Shipped in 3D.</span></h1>
     <p class="hero-serif">The one project in this portfolio I didn't code — I made it happen. Scoping, business requirements, cost analysis, and the delivery timeline for Emversity's VR simulation platform.</p>
     <p class="hero-sub">
       Emverse puts healthcare students inside their subject — <span class="serif-em">a full human anatomy they can walk around, take apart, and reassemble</span> — alongside procedural simulations for wound dressing and hygiene protocol. Built by a development team; scoped, specced, costed, and scheduled by me.
@@ -597,17 +642,13 @@
   </section>
 </div>
 
-<div class="next-strip">
-  <div class="wrap">
-    <div>
-      <span class="eyebrow">Next case study</span>
-      <h3>EmStudio, EVA, or all work?</h3>
-    </div>
-    <div class="next-links">
-      <a class="next-link" href="emstudio.html">EmStudio →</a>
-      <a class="next-link" href="eva.html">EVA →</a>
-      <a class="next-link" href="index.html">All work →</a>
-    </div>
+<!-- ── FOOTER CTA ── -->
+<div class="footer-cta">
+  <h2>Give me the<br>messy <em>problem.</em></h2>
+  <div class="footer-links">
+    <div class="fl-item"><span class="fl-label">Email</span><a class="fl-val" href="mailto:anubhakanwar2002@gmail.com">anubhakanwar2002@gmail.com</a></div>
+    <div class="fl-item"><span class="fl-label">LinkedIn</span><a class="fl-val" href="https://www.linkedin.com/in/anubha-kanwar-98631b227/?skipRedirect=true" target="_blank">linkedin.com/in/anubha-kanwar</a></div>
+    <div class="fl-item"><span class="fl-label">Based in</span><span class="fl-val" style="cursor:default">Bengaluru, India</span></div>
   </div>
 </div>
 
@@ -669,6 +710,23 @@
     };
 
     initCarousel('carousel-vr');
+  })();
+</script>
+
+<script>
+  (function(){
+    if (!('IntersectionObserver' in window)) return;
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting){
+          entry.target.classList.add('is-visible');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('section, .footer-cta').forEach(function(el){
+      obs.observe(el);
+    });
   })();
 </script>
 

@@ -85,7 +85,8 @@ export default function FeaturedProject({
           </div>
         </div>
 
-        <div
+        <a
+          href={caseHref}
           className="group rounded-[28px] py-16 px-[72px] mb-7 overflow-hidden flex items-center justify-center max-[700px]:py-7 max-[700px]:px-5"
           style={{ background: frameColor }}
         >
@@ -106,7 +107,7 @@ export default function FeaturedProject({
               className="w-full h-auto block transition-transform duration-[600ms] ease-out group-hover:scale-[1.025]"
             />
           </Reveal>
-        </div>
+        </a>
 
         <div className="flex justify-between gap-6 flex-wrap items-start">
           <div className="flex gap-2 flex-wrap mb-4">
