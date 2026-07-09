@@ -3,21 +3,21 @@ import Reveal from "./Reveal";
 const cards = [
   {
     num: "01",
-    title: "I FIND WHAT'S WORTH BUILDING.",
+    title: "I find what's worth building.",
     body: "I stress-test scope with data before committing engineering time — the kind of digging that once turned a sales funnel RCA across 300K+ leads into four concrete, actionable hypotheses.",
     tag: "Discover",
     dark: true,
   },
   {
     num: "02",
-    title: "I DON'T WAIT FOR ENGINEERING.",
+    title: "I don't wait for engineering.",
     body: "When a v1 needs to exist, I build it myself. EmStudio, PitchMate, and JSP were all coded solo using Claude, GPT, and Cursor — no hand-off required to prove the idea.",
     tag: "Build",
     dark: false,
   },
   {
     num: "03",
-    title: "I CLOSE THE LOOP WITH DATA.",
+    title: "I close the loop with data.",
     body: "Every ship gets a metric attached before it goes out — then I go find out if it moved. That's how a 24-hour contact window and a 7-minute re-escalation threshold got discovered, not assumed.",
     tag: "Measure",
     dark: false,
@@ -29,14 +29,14 @@ export default function HowIWork() {
     <Reveal
       as="section"
       id="process"
-      className="reveal flex items-center min-h-[100svh] pt-[60px] pb-[70px] bg-cream-alt"
+      className="reveal py-[100px] bg-cream-alt"
     >
       <div className="w-full max-w-[1240px] mx-auto px-10 max-[480px]:px-5">
         <div className="eyebrow flex items-center gap-2.5 mb-[18px] font-semibold text-[0.78rem] tracking-[0.14em] uppercase text-muted">
           ACROSS THE PRODUCT LIFECYCLE
         </div>
-        <h2 className="uppercase text-[clamp(2.1rem,4.6vw,3.4rem)] mb-14">
-          HOW I WORK.
+        <h2 className="text-[clamp(2.1rem,4.6vw,3.4rem)] mb-14">
+          How I work.
         </h2>
         <Reveal
           as="div"
@@ -54,7 +54,7 @@ export default function HowIWork() {
               <div className="font-display text-[1.6rem] text-terracotta mb-[26px]">
                 {c.num}
               </div>
-              <h3 className="text-2xl uppercase mb-4 leading-[1.15]">
+              <h3 className="text-2xl mb-4 leading-[1.15]">
                 {c.title}
               </h3>
               <p

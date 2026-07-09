@@ -2,19 +2,19 @@ export default function Hero() {
   return (
     <section
       id="top"
-      className="relative overflow-hidden flex items-center min-h-[100svh] pt-12 pb-10"
+      className="relative overflow-hidden flex items-center min-h-[100svh] py-16 bg-cream"
     >
       <div className="w-full max-w-[1240px] mx-auto px-10 max-[480px]:px-5">
         <div className="relative z-[1] max-w-[900px]">
-          <h1 className="uppercase text-[clamp(2.6rem,6.4vw,5.1rem)]">
+          <h1 className="text-[clamp(2.9rem,7vw,5.6rem)]">
             <span className="block opacity-0 animate-line-up [animation-delay:50ms]">
-              I WRITE PRDS.
+              I write PRDs.
             </span>
             <span className="block opacity-0 animate-line-up [animation-delay:200ms] italic text-terracotta">
-              THEN I GO BUILD THE THING.
+              Then I go build the thing.
             </span>
             <span className="block opacity-0 animate-line-up [animation-delay:350ms] text-[0.5em] mt-1.5">
-              BECAUSE SPECS DON&apos;T SHIP — PRODUCTS DO.
+              Because specs don&apos;t ship — products do.
             </span>
           </h1>
         </div>

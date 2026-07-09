@@ -47,12 +47,12 @@ export default function Testimonials() {
         <div className="eyebrow flex items-center gap-2.5 mb-[18px] font-semibold text-[0.78rem] tracking-[0.14em] uppercase text-[#9A9384]">
           WHAT PEOPLE SAY
         </div>
-        <h2 className="uppercase text-[clamp(2rem,4.6vw,3.2rem)] max-w-[900px] mb-16">
-          WORDS FROM{" "}
-          <span className="font-accent italic font-black text-terracotta">
-            THE PEOPLE
+        <h2 className="text-[clamp(2rem,4.6vw,3.2rem)] max-w-[900px] mb-16">
+          Words from{" "}
+          <span className="font-accent italic font-bold text-terracotta">
+            the people
           </span>{" "}
-          I&apos;VE SHIPPED WITH.
+          I&apos;ve shipped with.
         </h2>
 
         <div className="max-w-[900px] min-h-[180px]">

@@ -11,15 +11,15 @@ export default function About() {
     <Reveal
       as="section"
       id="about"
-      className="reveal py-20 bg-cream-alt border-t border-line"
+      className="reveal py-[100px] bg-cream-alt border-t border-line"
     >
       <div className="max-w-[1240px] mx-auto px-10 max-[480px]:px-5 grid grid-cols-[1.4fr_1fr] gap-[60px] items-start max-[860px]:grid-cols-1">
         <div>
           <div className="eyebrow flex items-center gap-2.5 mb-[18px] font-semibold text-[0.78rem] tracking-[0.14em] uppercase text-muted">
             ABOUT ME
           </div>
-          <h2 className="uppercase text-[clamp(1.9rem,3.6vw,2.6rem)] mb-5">
-            BIOSCIENCES BY DEGREE. PRODUCT BY CHOICE.
+          <h2 className="text-[clamp(1.9rem,3.6vw,2.6rem)] mb-5">
+            Biosciences by degree. Product by choice.
           </h2>
           <p className="text-ink-soft text-[1.05rem] max-w-[560px]">
             I studied Biosciences and Bioengineering at IIT Roorkee, then

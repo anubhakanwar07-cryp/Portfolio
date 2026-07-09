@@ -2,10 +2,10 @@ export default function Footer() {
   return (
     <footer id="footer" className="scroll-mt-[100px] bg-ink text-cream pt-[100px] pb-10">
       <div className="max-w-[1240px] mx-auto px-10 max-[480px]:px-5">
-        <h2 className="uppercase text-[clamp(2.2rem,6vw,4.4rem)] leading-[1.05] mb-[70px] max-w-[900px]">
-          NOW. BRING ME
-          <span className="font-accent italic font-black text-terracotta block">
-            THE AMBIGUOUS PROBLEM.
+        <h2 className="text-[clamp(2.2rem,6vw,4.4rem)] leading-[1.05] mb-[70px] max-w-[900px]">
+          Now. Bring me
+          <span className="font-accent italic font-bold text-terracotta block">
+            the ambiguous problem.
           </span>
         </h2>
 

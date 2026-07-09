@@ -40,7 +40,7 @@ export default function FeaturedProject({
     <Reveal
       as="section"
       id={id}
-      className={`reveal py-[72px] border-b border-line ${alt ? "bg-cream-alt" : "bg-white"}`}
+      className={`reveal py-[100px] border-b border-line ${alt ? "bg-cream-alt" : "bg-white"}`}
     >
       <div className="max-w-[1240px] mx-auto px-10 max-[480px]:px-5">
         <div className="flex justify-between items-start gap-10 flex-wrap mb-9">
@@ -48,7 +48,7 @@ export default function FeaturedProject({
             <div className="eyebrow flex items-center gap-2.5 mb-[18px] font-semibold text-[0.78rem] tracking-[0.14em] uppercase text-muted">
               {eyebrow}
             </div>
-            <h3 className="uppercase text-[clamp(2.2rem,4.6vw,3.6rem)] max-w-[620px]">
+            <h3 className="text-[clamp(2.2rem,4.6vw,3.6rem)] max-w-[620px]">
               {titleLines.map((line, i) => (
                 <span key={i}>
                   {line}

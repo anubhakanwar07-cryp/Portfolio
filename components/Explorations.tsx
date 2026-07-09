@@ -25,13 +25,17 @@ const items = [
 
 export default function Explorations() {
   return (
-    <Reveal as="section" id="explorations" className="reveal py-[100px]">
+    <Reveal
+      as="section"
+      id="explorations"
+      className="reveal py-[100px] bg-cream"
+    >
       <div className="max-w-[1240px] mx-auto px-10 max-[480px]:px-5">
         <div className="eyebrow flex items-center gap-2.5 mb-[18px] font-semibold text-[0.78rem] tracking-[0.14em] uppercase text-muted">
           SIDE QUESTS
         </div>
-        <h2 className="uppercase text-[clamp(2.1rem,4.6vw,3.4rem)] mb-11">
-          EXPLORATIONS &amp; EXPERIMENTS.
+        <h2 className="text-[clamp(2.1rem,4.6vw,3.4rem)] mb-11">
+          Explorations &amp; experiments.
         </h2>
         <div className="explore-scroll flex gap-5 overflow-x-auto pb-2.5">
           {items.map((item) => (
@@ -42,7 +46,7 @@ export default function Explorations() {
               <div className="flex items-center justify-center w-11 h-11 rounded-xl bg-cream-alt text-xl">
                 {item.icon}
               </div>
-              <h4 className="font-display text-[1.05rem] uppercase">
+              <h4 className="font-display text-[1.05rem]">
                 {item.title}
               </h4>
               <p className="text-ink-soft text-[0.9rem]">{item.body}</p>

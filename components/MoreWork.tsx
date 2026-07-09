@@ -23,7 +23,7 @@ const cards: {
 }[] = [
   {
     cat: "ai",
-    bar: "bg-purple",
+    bar: "bg-[#1c9350]",
     eyebrow: "AI Product · PM-led",
     title: "EVA",
     desc: "An AI screening & interview platform — MCQ test plus a live voice interview — that screens applicants before admission.",
@@ -32,7 +32,7 @@ const cards: {
   },
   {
     cat: "ai",
-    bar: "bg-plum",
+    bar: "bg-[#2140c9]",
     eyebrow: "Platform Product · PM-led",
     title: "EVA 2.0",
     desc: "The placement operating system that runs after EVA admits a student — an ops console for admin, a self-serve hub for students.",
@@ -41,7 +41,7 @@ const cards: {
   },
   {
     cat: "analytics",
-    bar: "bg-slate",
+    bar: "bg-[#c73a2c]",
     eyebrow: "Analytics · BigQuery",
     title: "Sales Decline RCA",
     desc: "A root-cause investigation across 1.4M+ leads — leads were up 85.7% while enrollments fell 23.7%. Found the collapse point.",
@@ -50,7 +50,7 @@ const cards: {
   },
   {
     cat: "analytics",
-    bar: "bg-slate",
+    bar: "bg-[#3d8bf2]",
     eyebrow: "Analytics · AI data product",
     title: "Socrates",
     desc: "Two internal AI products in one — natural-language querying over the database, and behavioural clustering on sales calls.",
@@ -59,7 +59,7 @@ const cards: {
   },
   {
     cat: "0to1",
-    bar: "bg-olive",
+    bar: "bg-[#0e6e7e]",
     eyebrow: "0→1 Strategy",
     title: "VR Anatomy Sim",
     desc: "Scoping, BRD, cost analysis, and delivery timeline for Emverse's VR anatomy simulation — Meta headset and web access paths.",
@@ -81,8 +81,8 @@ export default function MoreWork() {
         <div className="eyebrow flex items-center gap-2.5 mb-[18px] font-semibold text-[0.78rem] tracking-[0.14em] uppercase text-muted">
           THE REST
         </div>
-        <h2 className="uppercase text-[clamp(2.1rem,4.6vw,3.4rem)] mb-[34px]">
-          MORE WORK, BY TYPE.
+        <h2 className="text-[clamp(2.1rem,4.6vw,3.4rem)] mb-[34px]">
+          More work, by type.
         </h2>
 
         <div className="flex gap-2.5 flex-wrap mb-11" role="tablist">
@@ -118,7 +118,7 @@ export default function MoreWork() {
                   <div className="text-[0.72rem] font-bold tracking-[0.09em] uppercase text-muted mb-2.5">
                     {card.eyebrow}
                   </div>
-                  <h3 className="font-display text-[1.3rem] uppercase mb-3 leading-[1.15]">
+                  <h3 className="font-display font-bold text-[1.3rem] mb-3 leading-[1.15]">
                     {card.title}
                   </h3>
                   <p className="text-ink-soft text-[0.95rem] grow mb-[18px]">

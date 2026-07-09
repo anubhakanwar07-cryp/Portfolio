@@ -1,31 +1,60 @@
 import type { Metadata } from "next";
-import { Archivo, Archivo_Black, Inter, Newsreader } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 
-const archivoBlack = Archivo_Black({
-  variable: "--font-archivo-black",
-  subsets: ["latin"],
-  weight: "400",
+const junicode = localFont({
+  variable: "--font-junicode",
+  src: [
+    { path: "../fonts/Junicode.ttf", weight: "400", style: "normal" },
+    { path: "../fonts/Junicode-Bold.ttf", weight: "700", style: "normal" },
+    { path: "../fonts/Junicode-Italic.ttf", weight: "400", style: "italic" },
+    {
+      path: "../fonts/Junicode-BoldItalic.ttf",
+      weight: "700",
+      style: "italic",
+    },
+  ],
 });
 
-const archivo = Archivo({
-  variable: "--font-archivo",
-  subsets: ["latin"],
-  weight: ["500", "600", "700", "900"],
-  style: ["normal", "italic"],
-});
-
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-});
-
-const newsreader = Newsreader({
-  variable: "--font-newsreader",
-  subsets: ["latin"],
-  style: ["italic"],
-  weight: ["500"],
+const bricolage = localFont({
+  variable: "--font-bricolage",
+  src: [
+    {
+      path: "../fonts/bricolage-grotesque-latin-200-normal.ttf",
+      weight: "200",
+      style: "normal",
+    },
+    {
+      path: "../fonts/bricolage-grotesque-latin-300-normal.ttf",
+      weight: "300",
+      style: "normal",
+    },
+    {
+      path: "../fonts/bricolage-grotesque-latin-400-normal.ttf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../fonts/bricolage-grotesque-latin-500-normal.ttf",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../fonts/bricolage-grotesque-latin-600-normal.ttf",
+      weight: "600",
+      style: "normal",
+    },
+    {
+      path: "../fonts/bricolage-grotesque-latin-700-normal.ttf",
+      weight: "700",
+      style: "normal",
+    },
+    {
+      path: "../fonts/bricolage-grotesque-latin-800-normal.ttf",
+      weight: "800",
+      style: "normal",
+    },
+  ],
 });
 
 export const metadata: Metadata = {
@@ -42,7 +71,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${archivoBlack.variable} ${archivo.variable} ${inter.variable} ${newsreader.variable} scroll-smooth`}
+      className={`${junicode.variable} ${bricolage.variable} scroll-smooth`}
       data-scroll-behavior="smooth"
     >
       <body className="bg-cream text-ink font-sans text-base leading-normal overflow-x-hidden antialiased">

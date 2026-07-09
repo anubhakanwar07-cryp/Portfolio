@@ -20,7 +20,7 @@ export default function Home() {
       <FeaturedProject
         id="work"
         eyebrow="EMVERSITY · AI PRODUCTION PLATFORM"
-        titleLines={["AI DOES THE CONTENT.", "I BUILT THE CHECK."]}
+        titleLines={["AI does the content.", "I built the check."]}
         role="PM + builder, end to end"
         year="2024–25"
         stack="Cursor · OpenAI API · Next.js"
@@ -36,7 +36,7 @@ export default function Home() {
 
       <FeaturedProject
         eyebrow="PERSONAL PROJECT · AI SALES TRAINING"
-        titleLines={["TRAIN TO CLOSE.", "BEFORE THE REAL CALL."]}
+        titleLines={["Train to close.", "Before the real call."]}
         role="Founder, PM & sole builder"
         year="2024"
         stack="AI APIs · Cursor"
@@ -53,7 +53,7 @@ export default function Home() {
 
       <FeaturedProject
         eyebrow="PERSONAL PROJECT · JOB SEARCH OS"
-        titleLines={["RUN YOUR JOB SEARCH", "LIKE A PIPELINE."]}
+        titleLines={["Run your job search", "like a pipeline."]}
         role="Sole builder — product, architecture, code"
         year="2026"
         stack="Next.js 14 · Supabase · GPT-4o"

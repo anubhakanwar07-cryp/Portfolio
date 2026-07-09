@@ -19,16 +19,16 @@ export default function SiteNav() {
 
   return (
     <header
-      className={`sticky top-0 z-50 bg-[rgba(246,241,231,0.92)] backdrop-blur-[8px] border-b border-line transition-shadow duration-[250ms] ${
+      className={`sticky top-0 z-50 bg-[rgba(242,240,227,0.92)] backdrop-blur-[8px] border-b border-line transition-shadow duration-[250ms] ${
         scrolled ? "shadow-[0_8px_24px_-18px_rgba(24,21,15,0.45)]" : ""
       }`}
     >
       <div className="relative flex items-center max-w-[1240px] mx-auto px-10 py-5 max-[480px]:px-5 max-[480px]:py-4">
         <a href="#top" className="group flex items-center gap-2.5">
-          <span className="flex items-center justify-center w-[34px] h-[34px] rounded-full border-2 border-ink font-display text-[0.95rem] transition-all duration-300 group-hover:bg-ink group-hover:text-cream group-hover:-rotate-[14deg]">
+          <span className="flex items-center justify-center w-[28px] h-[28px] rounded-full border border-ink font-display text-[0.82rem] transition-all duration-300 group-hover:bg-ink group-hover:text-cream group-hover:-rotate-[14deg]">
             AK
           </span>
-          <span className="font-display text-[1.05rem] tracking-[0.04em]">
+          <span className="font-sans font-medium text-[1.05rem] tracking-[0.04em]">
             ANUBHA KANWAR
           </span>
         </a>
