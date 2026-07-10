@@ -35,7 +35,7 @@ export default function Hero() {
                 href="#footer"
                 className="inline-flex items-center gap-2 px-[26px] py-3.5 rounded-full font-semibold text-[0.95rem] whitespace-nowrap bg-ink text-cream transition-all hover:-translate-y-0.5 hover:bg-terracotta-dark"
               >
-                Contact me ↗
+                Contact me ↗︎
               </a>
               <a
                 href="https://www.linkedin.com/in/anubha-kanwar-98631b227/?skipRedirect=true"
@@ -43,7 +43,7 @@ export default function Hero() {
                 rel="noopener"
                 className="inline-flex items-center gap-2 px-[26px] py-3.5 rounded-full font-semibold text-[0.95rem] whitespace-nowrap border-[1.5px] border-ink transition-all hover:-translate-y-0.5 hover:bg-ink hover:text-cream"
               >
-                View LinkedIn ↗
+                View LinkedIn ↗︎
               </a>
             </div>
           </div>

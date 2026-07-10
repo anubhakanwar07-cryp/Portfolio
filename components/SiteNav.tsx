@@ -53,7 +53,7 @@ export default function SiteNav() {
             onClick={() => setOpen(false)}
             className="hidden max-[860px]:block max-[860px]:px-10 max-[860px]:py-4 max-[860px]:border-t max-[860px]:border-line font-semibold text-terracotta-dark"
           >
-            Contact ↗
+            Contact ↗︎
           </a>
         </nav>
 
@@ -62,7 +62,7 @@ export default function SiteNav() {
             href="#footer"
             className="max-[860px]:hidden inline-flex items-center gap-2 px-[26px] py-3.5 rounded-full font-semibold text-[0.95rem] whitespace-nowrap bg-ink text-cream transition-all hover:-translate-y-0.5 hover:bg-terracotta-dark"
           >
-            Contact ↗
+            Contact ↗︎
           </a>
           <button
             aria-label="Toggle navigation menu"
