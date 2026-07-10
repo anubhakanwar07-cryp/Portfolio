@@ -92,6 +92,40 @@ nav{
 .tm-val{font-size:.82rem;font-weight:300;color:var(--text2);line-height:1.6}
 .tm-val.ac{color:var(--ac);font-family:var(--mono)}
 
+/* ── OVERVIEW (problem / what I did / outcome) ── */
+.overview{
+  max-width:1080px;margin:0 auto;padding:0 4rem;
+  display:grid;grid-template-columns:repeat(3,1fr);
+  border-bottom:1px solid var(--border);
+  margin-bottom:0;
+}
+.ov-col{
+  padding:2rem 1.75rem 2.25rem 0;
+  border-left:1px dashed var(--border);
+  padding-left:1.75rem;
+}
+.ov-col:first-child{border-left:none;padding-left:0}
+.ov-num{
+  display:block;font-family:var(--display);font-weight:700;
+  font-size:2.4rem;line-height:1;color:var(--border);margin-bottom:.4rem;
+}
+.ov-label{
+  display:block;font-family:var(--mono);font-size:9px;
+  letter-spacing:.14em;text-transform:uppercase;
+  color:var(--text3);margin-bottom:.6rem;
+}
+.ov-text{font-size:.85rem;color:var(--text2);line-height:1.7;max-width:320px}
+.ov-col-outcome{border-left:2px solid var(--ac);padding-left:calc(1.75rem - 1px)}
+.ov-col-outcome .ov-num{color:var(--ac)}
+.ov-col-outcome .ov-text{color:var(--text);font-weight:500}
+@media (max-width:800px){
+  .overview{grid-template-columns:1fr;border-bottom:none}
+  .ov-col{border-left:none;padding:1.5rem 0;border-top:1px dashed var(--border)}
+  .ov-col:first-child{border-top:none;padding-top:0}
+  .ov-col-outcome{border-left:none;border-top:2px solid var(--ac);padding-left:0}
+  .ov-text{max-width:none}
+}
+
 /* PROBLEM CARDS */
 .prob-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);margin-top:2rem}
 .prob-cell{background:var(--bg);padding:2rem 1.75rem}
@@ -173,7 +207,7 @@ nav{
 .fl-val{font-family:var(--mono);font-size:10px;letter-spacing:.06em;color:var(--ac)}
 
 @media(max-width:900px){
-  nav,.sect,.term,.footer-cta{padding-left:1.5rem;padding-right:1.5rem}
+  nav,.sect,.term,.footer-cta,.overview{padding-left:1.5rem;padding-right:1.5rem}
   .prob-grid,.term-meta{grid-template-columns:1fr}
   .layer-flow{flex-direction:column}
   .layer-arrow{transform:rotate(90deg);padding:.5rem 0;align-self:center}
@@ -181,18 +215,18 @@ nav{
   .shot-pair{grid-template-columns:1fr}
 }
 
-.term, .sect, .footer-cta{
+.term, .sect, .footer-cta, .overview{
   opacity:0; transform:translateY(24px);
   transition:opacity .7s ease, transform .7s ease;
 }
-.term.is-visible, .sect.is-visible, .footer-cta.is-visible{
+.term.is-visible, .sect.is-visible, .footer-cta.is-visible, .overview.is-visible{
   opacity:1; transform:translateY(0);
 }
 @media (prefers-reduced-motion: reduce){
-  .term, .sect, .footer-cta{transition:none; opacity:1; transform:none;}
+  .term, .sect, .footer-cta, .overview{transition:none; opacity:1; transform:none;}
 }
 </style>
-<noscript><style>.term,.sect,.footer-cta{opacity:1 !important;transform:none !important;}</style></noscript>
+<noscript><style>.term,.sect,.footer-cta,.overview{opacity:1 !important;transform:none !important;}</style></noscript>
 </head>
 <body>
 
@@ -229,6 +263,24 @@ nav{
         <div><span class="tm-lbl">Status</span><span class="tm-val ac">Live — jsp-mvp.vercel.app</span></div>
       </div>
     </div>
+  </div>
+</div>
+
+<div class="overview">
+  <div class="ov-col">
+    <span class="ov-num">01</span>
+    <span class="ov-label">The problem</span>
+    <p class="ov-text">Job searching was disorganized across three broken pieces — finding roles, tracking outreach, and surfacing unposted jobs.</p>
+  </div>
+  <div class="ov-col">
+    <span class="ov-num">02</span>
+    <span class="ov-label">What I did</span>
+    <p class="ov-text">I built JSP solo in 20 days — three layers for outreach, tracking, and discovery — coding with AI assistance.</p>
+  </div>
+  <div class="ov-col ov-col-outcome">
+    <span class="ov-num">03</span>
+    <span class="ov-label">The outcome</span>
+    <p class="ov-text">It's live at jsp-mvp.vercel.app, with real GPT-4o email drafts, a Kanban follow-up engine, and Google auth.</p>
   </div>
 </div>
 
@@ -440,7 +492,7 @@ nav{
         }
       });
     }, { threshold: 0.12 });
-    document.querySelectorAll('.term, .sect, .footer-cta').forEach(function(el){
+    document.querySelectorAll('.term, .sect, .footer-cta, .overview').forEach(function(el){
       obs.observe(el);
     });
   })();

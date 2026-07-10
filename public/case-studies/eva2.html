@@ -144,6 +144,50 @@
   .meta-label{font-family:'Bricolage Grotesque',monospace; font-size:10.5px; text-transform:uppercase; letter-spacing:.1em; color:var(--ink-faint); margin-bottom:8px;}
   .meta-value{font-size:15.5px; font-weight:600;}
 
+  /* ── OVERVIEW (problem / what I did / outcome) ── */
+  .overview{
+    display:grid; grid-template-columns:repeat(3,1fr);
+    border-bottom:1px solid var(--rule);
+    margin-bottom:8px;
+  }
+  .ov-col{
+    padding:32px 28px 36px 0;
+    border-left:1px dashed var(--rule);
+    padding-left:28px;
+  }
+  .ov-col:first-child{border-left:none; padding-left:0;}
+  .ov-num{
+    display:block;
+    font-family:'Junicode',serif; font-weight:700;
+    font-size:2.4rem; line-height:1;
+    color:var(--rule);
+    margin-bottom:.5rem;
+  }
+  .ov-label{
+    display:block;
+    font-family:'Bricolage Grotesque',monospace;
+    font-size:10.5px; letter-spacing:.1em; text-transform:uppercase;
+    color:var(--ink-faint); font-weight:600;
+    margin-bottom:.6rem;
+  }
+  .ov-text{
+    font-size:15px; line-height:1.55; color:var(--ink-soft);
+    max-width:340px;
+  }
+  .ov-col-outcome{
+    border-left:2px solid var(--admin);
+    padding-left:26px;
+  }
+  .ov-col-outcome .ov-num{color:var(--admin);}
+  .ov-col-outcome .ov-text{color:var(--ink); font-weight:500;}
+  @media (max-width:720px){
+    .overview{grid-template-columns:1fr; border-bottom:none;}
+    .ov-col{border-left:none; padding:24px 0; border-top:1px dashed var(--rule);}
+    .ov-col:first-child{border-top:none; padding-top:0;}
+    .ov-col-outcome{border-left:none; border-top:2px solid var(--admin); padding-left:0;}
+    .ov-text{max-width:none;}
+  }
+
   /* ============ SPLIT DIVIDER — signature element ============ */
   .split-divider{
     position:relative;
@@ -474,18 +518,18 @@
   }
 
   /* ── BASIC SCROLL REVEAL ── */
-  section, .footer-cta{
+  section, .footer-cta, .overview{
     opacity:0; transform:translateY(24px);
     transition:opacity .7s ease, transform .7s ease;
   }
-  section.is-visible, .footer-cta.is-visible{
+  section.is-visible, .footer-cta.is-visible, .overview.is-visible{
     opacity:1; transform:translateY(0);
   }
   @media (prefers-reduced-motion: reduce){
-    section, .footer-cta{transition:none; opacity:1; transform:none;}
+    section, .footer-cta, .overview{transition:none; opacity:1; transform:none;}
   }
 </style>
-<noscript><style>section,.footer-cta{opacity:1 !important;transform:none !important;}</style></noscript>
+<noscript><style>section,.footer-cta,.overview{opacity:1 !important;transform:none !important;}</style></noscript>
 </head>
 <body>
 
@@ -537,6 +581,24 @@
       </div>
     </div>
   </section>
+
+  <div class="overview">
+    <div class="ov-col">
+      <span class="ov-num">01</span>
+      <span class="ov-label">The problem</span>
+      <p class="ov-text">Placements ran on scattered Google Sheets and WhatsApp, so no one could confirm the real placement rate.</p>
+    </div>
+    <div class="ov-col">
+      <span class="ov-num">02</span>
+      <span class="ov-label">What I did</span>
+      <p class="ov-text">I designed both an admin command centre and a student career hub, shipping the management side first.</p>
+    </div>
+    <div class="ov-col ov-col-outcome">
+      <span class="ov-num">03</span>
+      <span class="ov-label">The outcome</span>
+      <p class="ov-text">The dashboard now tracks 76 enrolled students, 8 active jobs, and 3 offers in one live view.</p>
+    </div>
+  </div>
 </div>
 
 <!-- SIGNATURE SPLIT DIVIDER -->
@@ -929,7 +991,7 @@
         }
       });
     }, { threshold: 0.12 });
-    document.querySelectorAll('section, .footer-cta').forEach(function(el){
+    document.querySelectorAll('section, .footer-cta, .overview').forEach(function(el){
       obs.observe(el);
     });
   })();
