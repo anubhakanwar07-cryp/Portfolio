@@ -11,7 +11,7 @@ const cards = [
   {
     num: "02",
     title: "I don't wait for engineering.",
-    body: "When a v1 needs to exist, I build it myself. EmStudio, PitchMate, and JSP were all coded solo using Claude, GPT, and Cursor — no hand-off required to prove the idea.",
+    body: "When a v1 needs to exist, I build it myself. EmStudio, PitchMate, and JSP were all coded solo using Claude, GPT, and Cursor — no hand-off required to prove the idea. The same discipline extends to what the AI is allowed to do: Socrates is restricted to 7 approved views and always shows its generated SQL, so nothing ships as a black box.",
     tag: "Build",
     dark: false,
   },

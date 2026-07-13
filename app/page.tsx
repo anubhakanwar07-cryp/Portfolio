@@ -31,7 +31,7 @@ export default function Home() {
         imgWidth={1400}
         imgHeight={787}
         tags={["AI Production", "Built solo", "QC Engine"]}
-        desc="A QC engine for AI content production, built and shipped by me — workflow, frontend, and QC logic, end to end."
+        desc="A QC engine for AI content production, built and shipped by me — workflow, frontend, and QC logic, end to end. It flags spelling, factual, and image errors, each with a suggested fix for a human to accept or reject."
       />
 
       <FeaturedProject
