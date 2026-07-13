@@ -1,6 +1,12 @@
+import AmbientGlow from "./motion/AmbientGlow";
+
 export default function Footer() {
   return (
-    <footer id="footer" className="scroll-mt-[100px] bg-ink text-cream pt-[100px] pb-10">
+    <footer
+      id="footer"
+      className="relative overflow-hidden scroll-mt-[100px] bg-ink text-cream pt-[100px] pb-10"
+    >
+      <AmbientGlow variant="footer" className="-z-10" />
       <div className="max-w-[1240px] mx-auto px-10 max-[480px]:px-5">
         <h2 className="text-[clamp(2.2rem,6vw,4.4rem)] leading-[1.05] mb-[70px] max-w-[900px]">
           Now. Bring me
@@ -53,14 +59,17 @@ export default function Footer() {
         <div className="border-t border-white/12 pt-7 flex justify-between flex-wrap gap-4 text-[0.85rem] text-[#8B857A]">
           <div>© Anubha, 2026.</div>
           <div className="flex gap-7 uppercase tracking-[0.08em] font-semibold text-[0.8rem]">
-            <a href="mailto:anubhakanwar2002@gmail.com" className="text-cream">
+            <a
+              href="mailto:anubhakanwar2002@gmail.com"
+              className="text-cream transition-colors duration-300 hover:text-terracotta"
+            >
               Email
             </a>
             <a
               href="https://www.linkedin.com/in/anubha-kanwar-98631b227/?skipRedirect=true"
               target="_blank"
               rel="noopener"
-              className="text-cream"
+              className="text-cream transition-colors duration-300 hover:text-terracotta"
             >
               LinkedIn
             </a>
@@ -68,7 +77,7 @@ export default function Footer() {
               href="/Anubha_Kanwar_Resume.pdf"
               target="_blank"
               rel="noopener"
-              className="text-cream"
+              className="text-cream transition-colors duration-300 hover:text-terracotta"
             >
               Resume
             </a>

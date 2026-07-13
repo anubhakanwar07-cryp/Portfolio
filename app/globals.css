@@ -17,7 +17,12 @@
   --font-accent: var(--font-junicode);
   --font-serif-accent: var(--font-junicode);
 
-  --animate-line-up: line-up 0.7s ease forwards;
+  --animate-line-up: line-up 0.9s var(--ease-premium) forwards;
+}
+
+:root {
+  --ease-premium: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur-reveal: 1000ms;
 }
 
 @keyframes line-up {
@@ -72,10 +77,10 @@
    concept of "this element's own JS-driven state". */
 .reveal {
   opacity: 0;
-  transform: translateY(28px);
+  transform: translateY(24px);
   transition:
-    opacity 0.7s ease,
-    transform 0.7s ease;
+    opacity var(--dur-reveal) var(--ease-premium),
+    transform var(--dur-reveal) var(--ease-premium);
 }
 .reveal[data-inview="true"] {
   opacity: 1;
@@ -86,39 +91,48 @@
   opacity: 0;
   transform: translateY(24px);
   transition:
-    opacity 0.6s ease,
-    transform 0.6s ease;
+    opacity var(--dur-reveal) var(--ease-premium),
+    transform var(--dur-reveal) var(--ease-premium);
 }
 .reveal-stagger[data-inview="true"] > * {
   opacity: 1;
   transform: translateY(0);
 }
 .reveal-stagger[data-inview="true"] > *:nth-child(1) {
-  transition-delay: 0.03s;
+  transition-delay: 0s;
 }
 .reveal-stagger[data-inview="true"] > *:nth-child(2) {
-  transition-delay: 0.11s;
+  transition-delay: 0.08s;
 }
 .reveal-stagger[data-inview="true"] > *:nth-child(3) {
-  transition-delay: 0.19s;
+  transition-delay: 0.16s;
 }
 .reveal-stagger[data-inview="true"] > *:nth-child(4) {
-  transition-delay: 0.27s;
+  transition-delay: 0.24s;
 }
 .reveal-stagger[data-inview="true"] > *:nth-child(5) {
-  transition-delay: 0.35s;
+  transition-delay: 0.32s;
 }
 
 .fp-window {
   opacity: 0;
   transform: translateY(36px) scale(0.95);
   transition:
-    opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.15s,
-    transform 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.15s;
+    opacity var(--dur-reveal) var(--ease-premium) 0.15s,
+    transform var(--dur-reveal) var(--ease-premium) 0.15s,
+    border-color 300ms var(--ease-premium);
 }
 .fp-window[data-inview="true"] {
   opacity: 1;
   transform: translateY(0) scale(1);
+}
+
+/* Site-wide grain texture, mounted once in the root layout so it's felt
+   everywhere rather than only in one section. Static (no animation needed
+   for a texture layer). */
+.grain-overlay {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
 }
 
 /* Fades the last visible card in the horizontal explorations scroller instead

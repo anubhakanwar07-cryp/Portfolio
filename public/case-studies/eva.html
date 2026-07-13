@@ -46,6 +46,8 @@ nav{
 }
 .nav-logo{font-family:var(--display);font-weight:700;font-size:1rem;color:var(--ink)}
 .nav-logo span{color:var(--ac)}
+.nav-logo a{color:inherit;text-decoration:none}
+.nav-logo .nav-sep{color:var(--ink3);margin:0 .1em}
 .nav-r{display:flex;gap:1.5rem;align-items:center}
 .nav-r a{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink3)}
 .nav-r a:hover{color:var(--ac)}
@@ -123,16 +125,17 @@ nav{
 .refl-b{font-size:.85rem;font-weight:300;color:var(--ink2);line-height:1.8}
 
 /* FOOTER */
-.footer-cta{max-width:1080px;margin:0 auto;padding:6rem 4rem 4rem;background:var(--ink);color:#fff;border-radius:0}
-.footer-cta h2{font-family:var(--display);font-weight:700;font-size:clamp(2.4rem,7vw,5.5rem);line-height:.95}
+.footer-cta{max-width:1140px;margin:0 auto;padding:6rem 40px 5rem;border-radius:0}
+@media(max-width:720px){ .footer-cta{padding:6rem 22px 5rem} }
+.footer-cta h2{font-family:var(--display);font-weight:700;font-size:clamp(2.4rem,7vw,5.5rem);line-height:.95;color:var(--ink)}
 .footer-cta h2 em{font-family:var(--sans);font-style:italic;font-weight:300;color:var(--ac);text-transform:none}
-.footer-links{display:flex;gap:3rem;margin-top:3rem;border-top:1px solid rgba(255,255,255,.15);padding-top:2rem;flex-wrap:wrap}
+.footer-links{display:flex;gap:3rem;margin-top:3rem;border-top:1px solid var(--line);padding-top:2rem;flex-wrap:wrap}
 .fl-item{}
-.fl-label{font-family:var(--mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:#8fae9b;display:block;margin-bottom:.35rem}
-.fl-val{font-family:var(--mono);font-size:10px;letter-spacing:.06em;color:#fff}
+.fl-label{font-family:var(--mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink3);display:block;margin-bottom:.35rem}
+.fl-val{font-family:var(--mono);font-size:10px;letter-spacing:.06em;color:var(--ink)}
 
 @media(max-width:900px){
-  nav,.sect,.hero,.stepper,.footer-cta,.overview{padding-left:1.5rem;padding-right:1.5rem}
+  nav,.sect,.hero,.stepper,.overview{padding-left:1.5rem;padding-right:1.5rem}
   .meta-grid,.two-col,.dec-row,.outcome-grid,.shot-pair,.flow-item{grid-template-columns:1fr;gap:1rem}
   .stepper{display:none}
 }
@@ -187,7 +190,7 @@ nav{
 <body>
 
 <nav>
-  <span class="nav-logo">eva<span>.</span></span>
+  <span class="nav-logo"><a href="/">Anubha Kanwar</a> <span class="nav-sep">·</span> eva<span>.</span></span>
   <div class="nav-r">
     <a href="/#work" class="back">← All work</a>
     <a href="mailto:anubhakanwar2002@gmail.com">Contact ↗︎</a>
@@ -254,7 +257,7 @@ nav{
 <div class="sect alt">
   <p class="kicker">My role</p>
   <h2 class="h2">Owned it end to end. <em>Built none of it myself.</em></h2>
-  <p class="p">I owned EVA end to end — from understanding why the admissions problem existed, to designing the product flow, to working with engineering to ship the proctoring system, the AI interview engine, and the assessment experience. I wasn't the developer here. I owned every product decision: what the two-part structure should look like, how proctoring should work, what the AI interviewer should do, and how results feed back into admissions decisions.</p>
+  <p class="p">I owned EVA end to end — from understanding why the admissions problem existed, to designing the product flow, to working with engineering to ship the proctoring system, the AI interview engine, and the assessment experience. I wasn't the developer here. I owned every product decision: what the two-part structure should look like, how proctoring should work, what the AI interviewer should do, and how results feed back into admissions decisions. [NEEDS INPUT: 2-3 sentences on the actual day-to-day texture of owning the AI engine — did you write/review the question bank? set the scenario-question rubric? review model output samples with engineering?]</p>
 </div>
 
 <!-- THE PRODUCT -->
@@ -376,6 +379,13 @@ nav{
   </div>
 </div>
 
+<!-- CALIBRATING THE AI INTERVIEWER -->
+<div class="sect">
+  <p class="kicker">Calibrating the AI interviewer</p>
+  <h2 class="h2">How I knew <em>the questions were fair.</em></h2>
+  <p class="p">[NEEDS INPUT: describe any process for reviewing AI interview transcripts, comparing AI scoring against what a human interviewer would conclude, or catching bad/biased/irrelevant questions before they reached applicants. If no formal process existed, say so directly — e.g. "I didn't build a formal review loop for this in v1 — a gap the reflection below addresses directly."]</p>
+</div>
+
 <!-- OUTCOME -->
 <div class="sect alt">
   <p class="kicker">Outcome</p>
@@ -392,7 +402,7 @@ nav{
     </div>
     <div class="outcome-cell">
       <p class="outcome-t">Directional, not measured yet</p>
-      <p class="outcome-b">Students who pass both parts show meaningfully higher engagement once inside the program — a real trend, though I don't have a formal before/after study to cite a number from.</p>
+      <p class="outcome-b">[NEEDS INPUT: number of applicants screened to date, or hours of human-interviewer time replaced per cycle]. Students who pass both parts show meaningfully higher engagement once inside the program — directional, not measured yet.</p>
     </div>
   </div>
 </div>
@@ -400,7 +410,7 @@ nav{
 <!-- REFLECTION -->
 <div class="sect">
   <p class="kicker">What I'd do differently</p>
-  <h2 class="h2">Two things <em>I'd build earlier</em></h2>
+  <h2 class="h2">Three things <em>I'd build earlier</em></h2>
   <div class="refl-item">
     <span class="refl-n">01</span>
     <div>
@@ -415,10 +425,17 @@ nav{
       <p class="refl-b">Early on, the question bank was one-size-fits-all — students from different backgrounds got identical questions regardless of stated experience. I'd build difficulty tiers and let the AI adapt based on early answers, so someone who aces the first two questions gets progressively harder follow-ups instead of staying flat.</p>
     </div>
   </div>
+  <div class="refl-item">
+    <span class="refl-n">03</span>
+    <div>
+      <p class="refl-t">Set up a formal AI-evaluation loop from day one</p>
+      <p class="refl-b">I'd compare AI interview scores against admissions-team overrides systematically from the start, instead of relying on directional signal after the fact.</p>
+    </div>
+  </div>
 </div>
 
 <div class="footer-cta">
-  <h2>Give me the<br>messy <em>problem.</em></h2>
+  <h2>Give me the<br>ambiguous <em>problem.</em></h2>
   <div class="footer-links">
     <div class="fl-item"><span class="fl-label">Email</span><a class="fl-val" href="mailto:anubhakanwar2002@gmail.com">anubhakanwar2002@gmail.com</a></div>
     <div class="fl-item"><span class="fl-label">LinkedIn</span><a class="fl-val" href="https://www.linkedin.com/in/anubha-kanwar-98631b227/?skipRedirect=true" target="_blank">linkedin.com/in/anubha-kanwar</a></div>

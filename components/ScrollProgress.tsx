@@ -9,7 +9,7 @@ export default function ScrollProgress() {
     const onScroll = () => {
       const docHeight =
         document.documentElement.scrollHeight - window.innerHeight;
-      setPct(docHeight > 0 ? (window.scrollY / docHeight) * 100 : 0);
+      setPct(docHeight > 0 ? window.scrollY / docHeight : 0);
     };
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -17,9 +17,9 @@ export default function ScrollProgress() {
 
   return (
     <div
-      className="fixed top-0 left-0 z-[100] h-[3px] transition-[width] duration-100 ease-linear"
+      className="fixed top-0 left-0 z-[100] h-[3px] w-full origin-left transition-transform duration-100 ease-linear"
       style={{
-        width: `${pct}%`,
+        transform: `scaleX(${pct})`,
         background:
           "linear-gradient(90deg, var(--color-terracotta), var(--color-terracotta-dark))",
       }}

@@ -154,8 +154,8 @@ nav{
 
 /* BROWSER CHROME SHOTS */
 .browser{
-  border:1px solid var(--border);border-radius:10px;overflow:hidden;margin:1.75rem 0;
-  box-shadow:0 30px 70px -30px rgba(0,0,0,.6);
+  border:1px solid rgba(74,222,128,.18);border-radius:10px;overflow:hidden;margin:1.75rem 0;
+  box-shadow:0 30px 70px -30px rgba(0,0,0,.6), 0 0 0 1px rgba(74,222,128,.06), 0 0 50px -12px rgba(74,222,128,.18);
 }
 .browser-bar{
   display:flex;align-items:center;gap:.6rem;padding:.6rem .9rem;background:#141414;border-bottom:1px solid var(--border);
@@ -359,7 +359,7 @@ nav{
       <span class="log-date">DAY 14</span>
       <div>
         <p class="log-msg"><span class="tag">$</span>git commit -m "Branch 1 complete: gpt-4o wired, editable email, followup fields"</p>
-        <p class="log-body">The most important single commit in the project. Real GPT-4o replaced the template. The email became an editable <span class="mono-tag">&lt;textarea&gt;</span> — nobody should send an AI draft without reading it first. And <b>sent_at</b> / <b>followup_due_at</b> got written on save — the foundation the entire follow-up engine in Branch 2 would depend on.</p>
+        <p class="log-body">The most important single commit in the project. Real GPT-4o replaced the template. The email became an editable <span class="mono-tag">&lt;textarea&gt;</span> — nobody should send an AI draft without reading it first. And <b>sent_at</b> / <b>followup_due_at</b> got written on save — the foundation the entire follow-up engine in Branch 2 would depend on. [NEEDS INPUT: one sentence on why GPT-4o specifically — cost, latency, quality vs. alternatives considered]. The first drafts [NEEDS INPUT: concrete example — generic-sounding, hallucinated recruiter details, wrong tone] — refining the prompt against real recruiter examples got it to a draft worth sending, not just one that existed.</p>
       </div>
     </div>
     <div class="log-entry">
@@ -418,6 +418,7 @@ nav{
     <span class="work-tag">Layer 3 — Opportunity</span>
     <p class="work-h">A scored feed, not another job board to babysit.</p>
     <p class="p">Preferences set once, three sources merged into one ranked list — source is metadata nobody needs to see. Every card can go straight into the pipeline or straight into a recruiter search, closing the loop back into Layer 1.</p>
+    <p class="p">[NEEDS INPUT: describe how the ranked feed's scoring actually works today — the real weighting/criteria behind the ranking — and any validation step, even something as simple as "manually checked top-20 vs. bottom-20 scored jobs against my own judgment of fit."]</p>
     <div class="shot-pair">
       <div class="browser">
         <div class="browser-bar"><span class="browser-dot" style="background:#ff5f56"></span><span class="browser-dot" style="background:#ffbd2e"></span><span class="browser-dot" style="background:#27c93f"></span><span class="browser-url">jsp-mvp.vercel.app/opportunities</span></div>
@@ -473,7 +474,7 @@ nav{
 </div>
 
 <div class="footer-cta">
-  <h2>Give me the<br>messy <em>problem.</em></h2>
+  <h2>Give me the<br>ambiguous <em>problem.</em></h2>
   <div class="footer-links">
     <div class="fl-item"><span class="fl-label">Email</span><a class="fl-val" href="mailto:anubhakanwar2002@gmail.com">anubhakanwar2002@gmail.com</a></div>
     <div class="fl-item"><span class="fl-label">LinkedIn</span><a class="fl-val" href="https://www.linkedin.com/in/anubha-kanwar-98631b227/?skipRedirect=true" target="_blank">linkedin.com/in/anubha-kanwar</a></div>

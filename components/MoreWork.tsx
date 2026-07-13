@@ -32,21 +32,21 @@ const cards: {
   },
   {
     cat: "ai",
+    bar: "bg-[#6d3ae8]",
+    eyebrow: "AI Product · Solo Build",
+    title: "PitchMate",
+    desc: "An AI sales-training platform that role-plays real objections so reps rehearse before the real call.",
+    tags: ["AI Roleplay", "Sales Enablement"],
+    href: "/work/pitchmate",
+  },
+  {
+    cat: "ai",
     bar: "bg-[#2140c9]",
     eyebrow: "Platform Product · PM-led",
     title: "EVA 2.0",
     desc: "The placement operating system that runs after EVA admits a student — an ops console for admin, a self-serve hub for students.",
     tags: ["Placements", "Two-sided platform"],
     href: "/work/eva2",
-  },
-  {
-    cat: "analytics",
-    bar: "bg-[#c73a2c]",
-    eyebrow: "Analytics · BigQuery",
-    title: "Sales Decline RCA",
-    desc: "A root-cause investigation across 1.4M+ leads — leads were up 85.7% while enrollments fell 23.7%. Found the collapse point.",
-    tags: ["BigQuery", "Exec reporting"],
-    href: "/work/sales-decline-rca",
   },
   {
     cat: "analytics",
@@ -107,7 +107,7 @@ export default function MoreWork() {
             return (
               <div
                 key={card.title}
-                className={`group rounded-[18px] bg-white border border-line overflow-hidden flex flex-col transition-all hover:-translate-y-1.5 hover:shadow-[0_18px_36px_-20px_rgba(24,21,15,0.35)] ${
+                className={`group relative rounded-[18px] bg-white border border-line overflow-hidden flex flex-col transition-all duration-300 ease-[var(--ease-premium)] hover:-translate-y-1.5 hover:border-terracotta/25 hover:shadow-[0_18px_36px_-20px_rgba(24,21,15,0.35)] ${
                   visible ? "" : "hidden"
                 }`}
               >
@@ -136,7 +136,7 @@ export default function MoreWork() {
                   </div>
                   <a
                     href={card.href}
-                    className="font-bold text-[0.88rem] text-terracotta-dark inline-flex items-center gap-1.5 hover:underline"
+                    className="font-bold text-[0.88rem] text-terracotta-dark inline-flex items-center gap-1.5 hover:underline transition-colors duration-300 hover:text-terracotta"
                   >
                     Read case study{" "}
                     <span className="transition-transform group-hover:translate-x-1">

@@ -210,7 +210,9 @@ nav{
 }
 
 /* options A/B */
+.decision-grid-wrap{grid-column:1/-1}
 .options-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:2rem 0}
+.opt-body{font-size:.85rem;font-weight:300;color:var(--ink2);line-height:1.7}
 .option-card{
   border:1px solid var(--line);
   padding:1.75rem;border-radius:2px;
@@ -622,7 +624,13 @@ nav{
     <div>
       <p class="ch-p">EmStudio unifies the entire production workflow — Subject Creation → Learning Objectives → Content Drafting → Illustration → QC Review → Academic Approval → Export — in a single interface, replacing five disconnected tools. Every stage feeds the next. Progress is live and visible to every role, not just whoever happens to be tracking it that week.</p>
       <p class="ch-p">The QC engine I built runs AI-generated checks against the content — spelling, grammar, factual accuracy, image relevance — and hands every flagged issue to a human with a suggested fix attached. Nothing ships without a person accepting it first.</p>
+    </div>
 
+    <div>
+      <p class="ch-p" style="margin-bottom:2rem">The second decision was Accept/Reject over auto-correct. For factual academic content, auto-applying AI corrections without human sign-off is a liability. Every error gets a suggested fix — the reviewer makes the final call.</p>
+    </div>
+
+    <div class="decision-grid-wrap">
       <div class="options-grid">
         <div class="option-card">
           <span class="opt-label">Option A</span>
@@ -638,25 +646,19 @@ nav{
           <div class="opt-row"><span class="opt-pro">PRO</span> Matches how Ankita's team already triaged issues by hand</div>
           <div class="opt-row"><span class="opt-con">CON</span> More categories to design, build, and keep consistent</div>
         </div>
+        <div class="option-card">
+          <span class="opt-label">Accept/Reject — not auto-correct</span>
+          <p class="opt-body">Reviewers stay in the loop on every factual call. The AI Autocorrect button exists only for unambiguous cases — formula deduplication, clear spelling policy violations. Nothing that changes meaning ships without a human eye on it.</p>
+        </div>
+        <div class="option-card">
+          <span class="opt-label">Five categories — not one score</span>
+          <p class="opt-body">Spelling errors need writers. Factual errors need SMEs. Image errors need designers. A single quality score hides where work actually needs to go. Bucketing by type routes errors to the right person automatically — without any manual triage.</p>
+        </div>
       </div>
 
       <div class="tradeoff">
         <span class="tradeoff-lbl">Trade-off accepted</span>
         <p>Chose categorisation over a single score. Costs more to build up front — five error types instead of one number — but it's the difference between a dashboard that looks tidy and a workflow that actually routes work to the right person <strong>without anyone manually triaging it first.</strong></p>
-      </div>
-    </div>
-
-    <div>
-      <p class="ch-p" style="margin-bottom:2rem">The second decision was Accept/Reject over auto-correct. For factual academic content, auto-applying AI corrections without human sign-off is a liability. Every error gets a suggested fix — the reviewer makes the final call.</p>
-
-      <div style="border:1px solid var(--line);padding:1.5rem;border-radius:2px;margin-bottom:1rem">
-        <span style="font-family:var(--mono);font-size:8px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink3);display:block;margin-bottom:.5rem">Accept/Reject — not auto-correct</span>
-        <p style="font-size:.85rem;font-weight:300;color:var(--ink2);line-height:1.7">Reviewers stay in the loop on every factual call. The AI Autocorrect button exists only for unambiguous cases — formula deduplication, clear spelling policy violations. Nothing that changes meaning ships without a human eye on it.</p>
-      </div>
-
-      <div style="border:1px solid var(--line);padding:1.5rem;border-radius:2px">
-        <span style="font-family:var(--mono);font-size:8px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink3);display:block;margin-bottom:.5rem">Five categories — not one score</span>
-        <p style="font-size:.85rem;font-weight:300;color:var(--ink2);line-height:1.7">Spelling errors need writers. Factual errors need SMEs. Image errors need designers. A single quality score hides where work actually needs to go. Bucketing by type routes errors to the right person automatically — without any manual triage.</p>
       </div>
     </div>
   </div>
@@ -718,7 +720,11 @@ nav{
       <p class="ch-p">This is the part I built myself using OpenAI APIs, Claude, and Cursor. Engineering bandwidth was constrained. The problem was real. I had enough context on the requirements and enough access to AI coding tools to just build it.</p>
       <p class="ch-p">The engine reads academic content and surfaces errors across five categories — Spellings, Grammar, Factual, Image, Miscellaneous — with specific fixes suggested for each one. For each error: the original text, the error type, and a suggested correction. Accept or reject with one click.</p>
       <div class="pull-q">
-        <p>Codifying what "correct" means for academic content — British English, factual accuracy, image-text relevance — was the real work. Once that logic existed, the AI could apply it consistently at a scale no reviewer could match alone.</p>
+        <p>Codifying what "correct" means for academic content — British English, factual accuracy, image-text relevance — was the real work. Once that logic existed, the AI could apply it consistently at a scale no reviewer could match alone. One early rule flagged too aggressively — [NEEDS INPUT: example of an overly strict/loose initial rule and how it was corrected] — until the categorization logic was tightened against real reviewer feedback.</p>
+      </div>
+      <div style="margin-top:2rem;padding-top:2rem;border-top:1px solid var(--line)">
+        <p style="font-family:var(--display);font-weight:700;font-size:1.1rem;margin-bottom:.75rem">Validating the engine</p>
+        <p class="ch-p">[NEEDS INPUT: accept/reject rate reviewers gave to flagged errors, or a description of the manual spot-check process against Ankita's QC standard]. [NEEDS INPUT: one concrete example of a QC rule/prompt that was wrong initially and got corrected].</p>
       </div>
     </div>
     <div>
@@ -802,7 +808,7 @@ nav{
     <div class="imp-item">
       <span class="imp-big">Live</span>
       <p class="imp-what">In active use</p>
-      <p class="imp-ctx">This isn't a concept file. It's the system Emversity's content team runs subjects through today — I don't have a clean before/after metric yet, but the team's day-to-day tells the story: this is genuinely how the work gets done now.</p>
+      <p class="imp-ctx">This isn't a concept file. It's the system Emversity's content team runs subjects through today. [NEEDS INPUT: proxy metric — turnaround time per subject before/after, manual QC passes eliminated, or rework rate] — the team's day-to-day is the clearest evidence: this is genuinely how the work gets done now.</p>
     </div>
   </div>
 </div>
@@ -831,7 +837,7 @@ nav{
       <span class="refl-num">03</span>
       <div>
         <p class="refl-title">Instrument before shipping, not after</p>
-        <p class="refl-body">I made the Accept/Reject-over-auto-correct call directionally, based on what felt right for factual academic content, without setting up a way to measure it against the alternative. The team's day-to-day use suggests it was the right call — but I don't have the numbers to prove it, because I didn't instrument for them up front. Next time: define the metric, instrument the decision point, then ship.</p>
+        <p class="refl-body">I made the Accept/Reject-over-auto-correct call directionally, based on what felt right for factual academic content. The team's continued day-to-day use suggests it was the right call, but I never set up a way to measure it against the alternative. Next time: define the metric, instrument the decision point, then ship.</p>
       </div>
     </div>
   </div>
@@ -845,7 +851,7 @@ nav{
 
 <!-- ── FOOTER CTA ── -->
 <div class="footer-cta">
-  <h2>Give me the<br>messy <em>problem.</em></h2>
+  <h2>Give me the<br>ambiguous <em>problem.</em></h2>
   <div class="footer-links">
     <div class="fl-item">
       <span class="fl-label">Email</span>

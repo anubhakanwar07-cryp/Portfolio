@@ -94,19 +94,6 @@
 
   .hero{padding:76px 0 54px; position:relative; overflow:hidden;}
   .hero > *{position:relative; z-index:1;}
-  .hero::after{
-    content:'?';
-    position:absolute;
-    right:10px; top:30px;
-    font-family:'Junicode', serif;
-    font-style:italic;
-    font-size:clamp(220px, 26vw, 380px);
-    line-height:1;
-    color:var(--soc-tint);
-    z-index:0;
-    pointer-events:none;
-  }
-  @media (max-width:900px){ .hero::after{display:none;} }
   .hero-eyebrow{margin-bottom:22px; display:flex; align-items:center; gap:10px;}
   .hero-eyebrow .dot{width:6px; height:6px; border-radius:50%; background:var(--soc);}
   .hero h1{font-size:clamp(48px, 7.5vw, 92px); margin-bottom:10px;}
@@ -511,10 +498,6 @@
   <div class="topbar-inner">
     <div class="brand"><a href="/">Anubha Kanwar</a> <span>· Socrates</span></div>
     <div class="topnav-links"><a href="/#work">← All work</a>
-      <a href="#postsales">Post-Sales</a>
-      <a href="#presales">Pre-Sales</a>
-      <a href="#pilot">The pilot</a>
-      <a href="#reflection">Reflection</a>
       <a href="mailto:anubhakanwar2002@gmail.com">Contact ↗︎</a>
     </div>
   </div>
@@ -849,7 +832,7 @@
 
 <!-- ── FOOTER CTA ── -->
 <div class="footer-cta">
-  <h2>Give me the<br>messy <em>problem.</em></h2>
+  <h2>Give me the<br>ambiguous <em>problem.</em></h2>
   <div class="footer-links">
     <div class="fl-item">
       <span class="fl-label">Email</span>
@@ -864,13 +847,6 @@
       <span class="fl-val" style="cursor:default">Bengaluru, India</span>
     </div>
   </div>
-</div>
-
-<div class="wrap">
-  <footer>
-    <span>Anubha Kanwar — Associate Product Manager, Emversity</span>
-    <span>Case study 06 of 07</span>
-  </footer>
 </div>
 
 <script>

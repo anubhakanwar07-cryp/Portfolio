@@ -35,19 +35,19 @@ export default function Home() {
       />
 
       <FeaturedProject
-        eyebrow="PERSONAL PROJECT · AI SALES TRAINING"
-        titleLines={["Train to close.", "Before the real call."]}
-        role="Founder, PM & sole builder"
-        year="2024"
-        stack="AI APIs · Cursor"
-        caseHref="/work/pitchmate"
-        frameColor="#E1DEE8"
-        imgSrc="/preview-pitchmate.jpg"
-        imgAlt="PitchMate AI roleplay simulator with Rhea, an AI persona that raises live sales objections"
-        imgWidth={1400}
-        imgHeight={787}
-        tags={["AI Roleplay", "Sales Enablement", "Personal Project"]}
-        desc="An AI sales-training platform that role-plays real objections so reps rehearse before the real call."
+        eyebrow="EMVERSITY · ROOT CAUSE ANALYSIS"
+        titleLines={["More leads.", "Fewer students."]}
+        role="Full analysis, end to end"
+        year="2025–26"
+        stack="BigQuery · SQL"
+        caseHref="/work/sales-decline-rca"
+        frameColor="#E8D6D2"
+        imgSrc="/preview-rca.jpg"
+        imgAlt="Sales Decline RCA case study showing lead volume up 85.7% while enrollments fell 23.7%"
+        imgWidth={1060}
+        imgHeight={732}
+        tags={["BigQuery", "Root Cause Analysis", "Exec Reporting"]}
+        desc="A root-cause investigation across 1.4M+ leads — leads were up 85.7% while enrollments fell 23.7%. Found the collapse point."
         alt
       />
 

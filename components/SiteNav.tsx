@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import MagneticButton from "./motion/MagneticButton";
 
 const links = [
   { href: "#work", label: "Selected Work" },
@@ -58,12 +59,12 @@ export default function SiteNav() {
         </nav>
 
         <div className="flex items-center gap-[18px] max-[860px]:ml-auto">
-          <a
+          <MagneticButton
             href="#footer"
-            className="max-[860px]:hidden inline-flex items-center gap-2 px-[26px] py-3.5 rounded-full font-semibold text-[0.95rem] whitespace-nowrap bg-ink text-cream transition-all hover:-translate-y-0.5 hover:bg-terracotta-dark"
+            className="max-[860px]:hidden inline-flex items-center gap-2 px-[26px] py-3.5 rounded-full font-semibold text-[0.95rem] whitespace-nowrap bg-ink text-cream transition-colors hover:bg-terracotta-dark"
           >
             Contact ↗︎
-          </a>
+          </MagneticButton>
           <button
             aria-label="Toggle navigation menu"
             aria-expanded={open}

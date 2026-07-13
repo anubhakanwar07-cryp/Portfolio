@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import SmoothScrollProvider from "@/components/motion/SmoothScrollProvider";
+import CursorFollower from "@/components/motion/CursorFollower";
 import "./globals.css";
 
 const junicode = localFont({
@@ -71,11 +73,15 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${junicode.variable} ${bricolage.variable} scroll-smooth`}
-      data-scroll-behavior="smooth"
+      className={`${junicode.variable} ${bricolage.variable}`}
     >
       <body className="bg-cream text-ink font-sans text-base leading-normal overflow-x-hidden antialiased">
-        {children}
+        <div
+          aria-hidden
+          className="grain-overlay pointer-events-none fixed inset-0 z-[95] opacity-[0.03] mix-blend-overlay"
+        />
+        <CursorFollower />
+        <SmoothScrollProvider>{children}</SmoothScrollProvider>
       </body>
     </html>
   );

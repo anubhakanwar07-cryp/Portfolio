@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Reveal from "./Reveal";
+import AmbientGlow from "./motion/AmbientGlow";
 
 type Testimonial = {
   quote: string;
@@ -41,8 +42,9 @@ export default function Testimonials() {
     <Reveal
       as="section"
       id="testimonials"
-      className="reveal bg-ink text-cream py-[100px]"
+      className="reveal relative overflow-hidden bg-ink text-cream py-[100px]"
     >
+      <AmbientGlow variant="footer" className="-z-10" />
       <div className="max-w-[1240px] mx-auto px-10 max-[480px]:px-5">
         <div className="eyebrow flex items-center gap-2.5 mb-[18px] font-semibold text-[0.78rem] tracking-[0.14em] uppercase text-[#9A9384]">
           WHAT PEOPLE SAY
