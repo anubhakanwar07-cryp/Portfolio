@@ -1,5 +1,6 @@
 import AmbientGlow from "./motion/AmbientGlow";
 import MagneticButton from "./motion/MagneticButton";
+import TypewriterLine from "./motion/TypewriterLine";
 
 export default function Hero() {
   return (
@@ -22,10 +23,13 @@ export default function Hero() {
             <span className="block opacity-0 animate-line-up [animation-delay:50ms]">
               I write PRDs.
             </span>
-            <span className="block opacity-0 animate-line-up [animation-delay:200ms] italic text-terracotta">
-              Then I go build the thing.
-            </span>
-            <span className="block opacity-0 animate-line-up [animation-delay:350ms] text-[0.5em] mt-1.5">
+            <TypewriterLine
+              text="Then I go build the thing."
+              delayMs={200}
+              charMs={45}
+              className="italic text-terracotta"
+            />
+            <span className="block opacity-0 animate-line-up [animation-delay:1450ms] text-[0.5em] mt-1.5">
               Because specs don&apos;t ship — products do.
             </span>
           </h1>

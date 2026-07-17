@@ -15,6 +15,7 @@ type FeaturedProjectProps = {
   imgAlt: string;
   imgWidth: number;
   imgHeight: number;
+  motion?: React.ReactNode;
   tags: string[];
   desc: string;
   alt?: boolean;
@@ -33,10 +34,12 @@ export default function FeaturedProject({
   imgAlt,
   imgWidth,
   imgHeight,
+  motion,
   tags,
   desc,
   alt = false,
 }: FeaturedProjectProps) {
+  const hasMotion = Boolean(motion);
   return (
     <Reveal
       as="section"
@@ -91,30 +94,39 @@ export default function FeaturedProject({
 
         <a
           href={caseHref}
-          className="group relative rounded-[28px] py-16 px-[72px] mb-7 overflow-hidden flex items-center justify-center max-[700px]:py-7 max-[700px]:px-5 transition-all duration-300 ease-[var(--ease-premium)] hover:-translate-y-1.5 hover:shadow-[0_50px_85px_-30px_rgba(24,21,15,0.5)]"
+          className={`group relative rounded-[28px] mb-7 overflow-hidden flex items-center justify-center transition-all duration-300 ease-[var(--ease-premium)] hover:-translate-y-1.5 hover:shadow-[0_50px_85px_-30px_rgba(24,21,15,0.5)] ${hasMotion ? "border border-black/10" : "py-16 px-[72px] max-[700px]:py-7 max-[700px]:px-5"}`}
           style={{ background: frameColor }}
         >
           <AmbientGlow
             variant="card"
             className="-inset-8 -z-10 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
           />
-          <Reveal
-            as="div"
-            className="fp-window w-[86%] max-w-[880px] rounded-[14px] overflow-hidden bg-white border border-transparent shadow-[0_40px_70px_-30px_rgba(24,21,15,0.45)] group-hover:border-terracotta/25 max-[700px]:w-full"
-          >
-            <div className="flex items-center gap-1.5 px-4 py-[11px] bg-[#EEECE6] border-b border-black/[0.06]">
-              <span className="w-[9px] h-[9px] rounded-full bg-[#E28C7B]" />
-              <span className="w-[9px] h-[9px] rounded-full bg-[#E3C878]" />
-              <span className="w-[9px] h-[9px] rounded-full bg-[#8FBF8A]" />
+          {hasMotion ? (
+            <div
+              style={{ aspectRatio: `${imgWidth} / ${imgHeight}` }}
+              className="w-full transition-transform duration-[600ms] ease-out group-hover:scale-[1.025]"
+            >
+              {motion}
             </div>
-            <Image
-              src={imgSrc}
-              alt={imgAlt}
-              width={imgWidth}
-              height={imgHeight}
-              className="w-full h-auto block transition-transform duration-[600ms] ease-out group-hover:scale-[1.025]"
-            />
-          </Reveal>
+          ) : (
+            <Reveal
+              as="div"
+              className="fp-window w-[86%] max-w-[880px] rounded-[14px] overflow-hidden bg-white border border-transparent shadow-[0_40px_70px_-30px_rgba(24,21,15,0.45)] group-hover:border-terracotta/25 max-[700px]:w-full"
+            >
+              <div className="flex items-center gap-1.5 px-4 py-[11px] bg-[#EEECE6] border-b border-black/[0.06]">
+                <span className="w-[9px] h-[9px] rounded-full bg-[#E28C7B]" />
+                <span className="w-[9px] h-[9px] rounded-full bg-[#E3C878]" />
+                <span className="w-[9px] h-[9px] rounded-full bg-[#8FBF8A]" />
+              </div>
+              <Image
+                src={imgSrc}
+                alt={imgAlt}
+                width={imgWidth}
+                height={imgHeight}
+                className="w-full h-auto block transition-transform duration-[600ms] ease-out group-hover:scale-[1.025]"
+              />
+            </Reveal>
+          )}
         </a>
 
         <div className="flex justify-between gap-6 flex-wrap items-start">

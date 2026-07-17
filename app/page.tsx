@@ -3,6 +3,8 @@ import SiteNav from "@/components/SiteNav";
 import Hero from "@/components/Hero";
 import HowIWork from "@/components/HowIWork";
 import FeaturedProject from "@/components/FeaturedProject";
+import RcaPreview from "@/components/motion/RcaPreview";
+import VideoPreview from "@/components/motion/VideoPreview";
 import MoreWork from "@/components/MoreWork";
 import Testimonials from "@/components/Testimonials";
 import Explorations from "@/components/Explorations";
@@ -28,8 +30,9 @@ export default function Home() {
         frameColor="#D9E1DA"
         imgSrc="/preview-emstudio.jpg"
         imgAlt="EmStudio dashboard showing project progress, quality score, and team velocity"
-        imgWidth={1400}
-        imgHeight={787}
+        imgWidth={3809}
+        imgHeight={2068}
+        motion={<VideoPreview src="/emstudio-preview.webm" className="w-full h-full" />}
         tags={["AI Production", "Built solo", "QC Engine"]}
         desc="A QC engine for AI content production, built and shipped by me — workflow, frontend, and QC logic, end to end. It flags spelling, factual, and image errors, each with a suggested fix for a human to accept or reject."
       />
@@ -44,8 +47,9 @@ export default function Home() {
         frameColor="#E8D6D2"
         imgSrc="/preview-rca.jpg"
         imgAlt="Sales Decline RCA case study showing lead volume up 85.7% while enrollments fell 23.7%"
-        imgWidth={1060}
-        imgHeight={732}
+        imgWidth={3810}
+        imgHeight={2068}
+        motion={<RcaPreview className="w-full h-full" />}
         tags={["BigQuery", "Root Cause Analysis", "Exec Reporting"]}
         desc="A root-cause investigation across 1.4M+ leads — leads were up 85.7% while enrollments fell 23.7%. Found the collapse point."
         alt
@@ -61,8 +65,9 @@ export default function Home() {
         frameColor="#EAE1D0"
         imgSrc="/preview-jsp.jpg"
         imgAlt="JSP opportunities dashboard showing matched job listings with match scores"
-        imgWidth={1600}
-        imgHeight={900}
+        imgWidth={3840}
+        imgHeight={2084}
+        motion={<VideoPreview src="/jsp-preview.webm" className="w-full h-full" />}
         tags={["Next.js", "Live product", "Built solo"]}
         desc="A job-search tracker and outreach OS — shipped in 20 days with zero prior Next.js experience."
       />
