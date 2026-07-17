@@ -29,18 +29,19 @@ const BARS = [
 
 const CHAR_MS = 42;
 
-// These are all relative to the *real* moment typing finishes (a JS event),
-// not a guessed duration — the character-by-character reveal runs slower
-// than its nominal interval under real render overhead, so anchoring the
-// rest of the sequence to a fixed offset from cycle-start had subhead/stats
-// popping in while the title was still mid-type.
-const SUBHEAD_DELAY = 100;
-const STATS_DELAY = 600;
-const BARS_START = 1000;
+// Bars/subhead/stats are deliberately timed to start *during* typing, not
+// after — so these are fixed offsets from cycle-start (`active` becoming
+// true), which fires at a precise instant. That's safe here because none of
+// these three depend on knowing when typing finishes; only the post-typing
+// hold below still anchors to the real `doneTyping` event, since typing's
+// own duration is variable (the char-by-char loop runs slower than its
+// nominal interval under real render overhead).
+const BARS_START = 300;
+const SUBHEAD_DELAY = 600;
+const STATS_DELAY = 900;
 const BAR_STAGGER = 90;
 const BAR_DURATION = 550;
-const POST_TYPE_HOLD_MS =
-  BARS_START + (BARS.length - 1) * BAR_STAGGER + BAR_DURATION + 1100;
+const POST_TYPE_HOLD_MS = 1200;
 const FADE_MS = 550;
 const GAP_MS = 250;
 
@@ -110,9 +111,9 @@ export default function RcaPreview({ className }: { className?: string }) {
     };
   }, [doneTyping, reducedMotion]);
 
-  const revealed = reducedMotion || doneTyping;
+  const shown = reducedMotion || active;
   const typed = TITLE_CHARS.slice(0, reducedMotion ? TITLE_CHARS.length : typedCount);
-  const delayFor = (ms: number) => (revealed && !reducedMotion ? `${ms}ms` : "0ms");
+  const delayFor = (ms: number) => (active && !reducedMotion ? `${ms}ms` : "0ms");
 
   return (
     <div
@@ -148,8 +149,8 @@ export default function RcaPreview({ className }: { className?: string }) {
         style={{
           fontSize: "clamp(0.65rem, 1.3vw, 0.95rem)",
           color: "#55504a",
-          opacity: revealed ? 1 : 0,
-          transform: revealed ? "translateY(0)" : "translateY(8px)",
+          opacity: shown ? 1 : 0,
+          transform: shown ? "translateY(0)" : "translateY(8px)",
           transitionDuration: "550ms",
           transitionTimingFunction: EASE,
           transitionDelay: delayFor(SUBHEAD_DELAY),
@@ -162,8 +163,8 @@ export default function RcaPreview({ className }: { className?: string }) {
         className="mt-4 flex items-center justify-center gap-4 font-display font-bold transition-all"
         style={{
           fontSize: "clamp(1rem, 2.6vw, 1.9rem)",
-          opacity: revealed ? 1 : 0,
-          transform: revealed ? "translateY(0)" : "translateY(8px)",
+          opacity: shown ? 1 : 0,
+          transform: shown ? "translateY(0)" : "translateY(8px)",
           transitionDuration: "500ms",
           transitionTimingFunction: EASE,
           transitionDelay: delayFor(STATS_DELAY),
@@ -183,7 +184,7 @@ export default function RcaPreview({ className }: { className?: string }) {
                 height: "100%",
                 background: bar.color,
                 transformOrigin: "bottom",
-                transform: `scaleY(${revealed ? bar.ratio : 0})`,
+                transform: `scaleY(${shown ? bar.ratio : 0})`,
                 transitionDuration: `${BAR_DURATION}ms`,
                 transitionTimingFunction: EASE,
                 transitionDelay: delayFor(BARS_START + i * BAR_STAGGER),
