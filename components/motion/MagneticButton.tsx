@@ -5,7 +5,10 @@ import { motion } from "motion/react";
 import usePrefersReducedMotion from "@/hooks/usePrefersReducedMotion";
 import { EASE_PREMIUM, DUR_HOVER_MS } from "@/lib/motion";
 
-type MagneticButtonProps = React.ComponentPropsWithoutRef<"a"> & {
+type MagneticButtonProps = Omit<
+  React.ComponentPropsWithoutRef<"a">,
+  "onDrag" | "onDragStart" | "onDragEnd" | "onAnimationStart"
+> & {
   /** Max pixel offset the button can be pulled toward the pointer. */
   strength?: number;
 };
