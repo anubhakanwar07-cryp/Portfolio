@@ -41,7 +41,7 @@ export default function Explorations() {
           {items.map((item) => (
             <div
               key={item.title}
-              className="shrink-0 w-[280px] rounded-[18px] border border-line bg-white p-[26px] flex flex-col gap-3.5 transition-all hover:-translate-y-1 hover:shadow-[0_14px_30px_-20px_rgba(24,21,15,0.3)]"
+              className="shrink-0 w-[280px] rounded-[18px] border border-line bg-white p-[26px] flex flex-col gap-3.5 transition-[transform,box-shadow] hover:-translate-y-1 hover:shadow-[0_14px_30px_-20px_rgba(24,21,15,0.3)]"
             >
               <div className="flex items-center justify-center w-11 h-11 rounded-xl bg-cream-alt text-xl">
                 {item.icon}

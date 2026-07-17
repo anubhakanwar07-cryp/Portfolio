@@ -45,7 +45,7 @@ export default function HowIWork() {
           {cards.map((c) => (
             <div
               key={c.num}
-              className={`rounded-[18px] py-9 px-[30px] border border-line flex flex-col min-h-[340px] transition-all hover:-translate-y-1.5 hover:shadow-[0_20px_40px_-24px_rgba(24,21,15,0.35)] ${
+              className={`rounded-[18px] py-9 px-[30px] border border-line flex flex-col min-h-[340px] transition-[transform,box-shadow] hover:-translate-y-1.5 hover:shadow-[0_20px_40px_-24px_rgba(24,21,15,0.35)] ${
                 c.dark
                   ? "bg-ink text-cream border-ink"
                   : "bg-white"

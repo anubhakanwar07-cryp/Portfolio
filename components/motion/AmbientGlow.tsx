@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useRef, useState } from "react";
 import { motion } from "motion/react";
 import usePrefersReducedMotion from "@/hooks/usePrefersReducedMotion";
 import { LOOP_AMBIENT_S } from "@/lib/motion";
@@ -19,20 +20,40 @@ export default function AmbientGlow({
   className = "",
 }: AmbientGlowProps) {
   const reducedMotion = usePrefersReducedMotion();
-  const loop = reducedMotion
-    ? undefined
-    : { duration: LOOP_AMBIENT_S, repeat: Infinity, ease: "easeInOut" as const };
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [inView, setInView] = useState(false);
+
+  // Each instance's `repeat: Infinity` loop would otherwise keep running via
+  // Motion's own scheduler for the life of the page, regardless of scroll
+  // position — with up to 6 concurrent instances across the homepage, most
+  // of that is wasted work off-screen.
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      (entries) => entries.forEach((e) => setInView(e.isIntersecting)),
+      { rootMargin: "200px" },
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  const animating = !reducedMotion && inView;
+  const loop = animating
+    ? { duration: LOOP_AMBIENT_S, repeat: Infinity, ease: "easeInOut" as const }
+    : undefined;
 
   if (variant === "card") {
     return (
       <motion.div
+        ref={containerRef}
         aria-hidden
         className={`pointer-events-none absolute rounded-[32px] ${className}`}
         style={{
           background:
             "radial-gradient(circle, rgba(247,111,83,0.16), transparent 70%)",
         }}
-        animate={reducedMotion ? undefined : { scale: [1, 1.06, 1] }}
+        animate={animating ? { scale: [1, 1.06, 1] } : undefined}
         transition={loop}
       />
     );
@@ -43,6 +64,7 @@ export default function AmbientGlow({
 
   return (
     <div
+      ref={containerRef}
       aria-hidden
       className={`pointer-events-none absolute inset-0 overflow-hidden ${className}`}
     >
@@ -51,7 +73,7 @@ export default function AmbientGlow({
         style={{
           background: `radial-gradient(circle, rgba(247,111,83,${terracottaAlpha}), transparent 70%)`,
         }}
-        animate={reducedMotion ? undefined : { x: [0, 24, -12, 0], y: [0, -18, 10, 0] }}
+        animate={animating ? { x: [0, 24, -12, 0], y: [0, -18, 10, 0] } : undefined}
         transition={loop}
       />
       {inkAlpha > 0 && (
@@ -60,7 +82,7 @@ export default function AmbientGlow({
           style={{
             background: `radial-gradient(circle, rgba(32,32,32,${inkAlpha}), transparent 70%)`,
           }}
-          animate={reducedMotion ? undefined : { x: [0, -20, 12, 0], y: [0, 16, -10, 0] }}
+          animate={animating ? { x: [0, -20, 12, 0], y: [0, 16, -10, 0] } : undefined}
           transition={loop}
         />
       )}

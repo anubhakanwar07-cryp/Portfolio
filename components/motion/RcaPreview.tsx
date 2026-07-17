@@ -50,6 +50,7 @@ const EASE = "cubic-bezier(0.22, 1, 0.36, 1)";
 export default function RcaPreview({ className }: { className?: string }) {
   const wrapperRef = useRef<HTMLDivElement>(null);
   const [started, setStarted] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
   const [active, setActive] = useState(false);
   const [fading, setFading] = useState(false);
   const [typedCount, setTypedCount] = useState(0);
@@ -59,7 +60,11 @@ export default function RcaPreview({ className }: { className?: string }) {
     const el = wrapperRef.current;
     if (!el) return;
     const observer = new IntersectionObserver(
-      (entries) => entries.forEach((e) => e.isIntersecting && setStarted(true)),
+      (entries) =>
+        entries.forEach((e) => {
+          if (e.isIntersecting) setStarted(true);
+          setIsVisible(e.isIntersecting);
+        }),
       { rootMargin: "200px" },
     );
     observer.observe(el);
@@ -71,15 +76,19 @@ export default function RcaPreview({ className }: { className?: string }) {
     setActive(true);
   }, [started, reducedMotion]);
 
+  // Paused while scrolled off-screen so the per-character setState loop isn't
+  // still running in the background indefinitely — the hold/fade/restart
+  // sequence below doesn't need its own visibility check, since it only ever
+  // fires once `doneTyping` is true, which itself can't happen while paused.
   useEffect(() => {
     if (reducedMotion) {
       setTypedCount(TITLE_CHARS.length);
       return;
     }
-    if (!active || typedCount >= TITLE_CHARS.length) return;
+    if (!active || !isVisible || typedCount >= TITLE_CHARS.length) return;
     const t = setTimeout(() => setTypedCount((c) => c + 1), CHAR_MS);
     return () => clearTimeout(t);
-  }, [active, typedCount, reducedMotion]);
+  }, [active, isVisible, typedCount, reducedMotion]);
 
   const doneTyping = typedCount >= TITLE_CHARS.length;
 

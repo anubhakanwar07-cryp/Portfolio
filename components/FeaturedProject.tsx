@@ -94,7 +94,7 @@ export default function FeaturedProject({
 
         <a
           href={caseHref}
-          className={`group relative rounded-[28px] mb-7 overflow-hidden flex items-center justify-center transition-all duration-300 ease-[var(--ease-premium)] hover:-translate-y-1.5 hover:shadow-[0_50px_85px_-30px_rgba(24,21,15,0.5)] ${hasMotion ? "border border-black/10" : "py-16 px-[72px] max-[700px]:py-7 max-[700px]:px-5"}`}
+          className={`group relative rounded-[28px] mb-7 overflow-hidden flex items-center justify-center transition-[transform,box-shadow] duration-300 ease-[var(--ease-premium)] hover:-translate-y-1.5 hover:shadow-[0_50px_85px_-30px_rgba(24,21,15,0.5)] ${hasMotion ? "border border-black/10" : "py-16 px-[72px] max-[700px]:py-7 max-[700px]:px-5"}`}
           style={{ background: frameColor }}
         >
           <AmbientGlow

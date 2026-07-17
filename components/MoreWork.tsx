@@ -107,7 +107,7 @@ export default function MoreWork() {
             return (
               <div
                 key={card.title}
-                className={`group relative rounded-[18px] bg-white border border-line overflow-hidden flex flex-col transition-all duration-300 ease-[var(--ease-premium)] hover:-translate-y-1.5 hover:border-terracotta/25 hover:shadow-[0_18px_36px_-20px_rgba(24,21,15,0.35)] ${
+                className={`group relative rounded-[18px] bg-white border border-line overflow-hidden flex flex-col transition-[transform,border-color,box-shadow] duration-300 ease-[var(--ease-premium)] hover:-translate-y-1.5 hover:border-terracotta/25 hover:shadow-[0_18px_36px_-20px_rgba(24,21,15,0.35)] ${
                   visible ? "" : "hidden"
                 }`}
               >
