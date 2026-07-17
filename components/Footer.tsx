@@ -47,7 +47,9 @@ export default function Footer() {
               Bengaluru, India · IST
               <br />
               <a
-                href="mailto:anubhakanwar2002@gmail.com"
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=anubhakanwar2002@gmail.com"
+                target="_blank"
+                rel="noopener"
                 className="underline decoration-[#54503F]"
               >
                 anubhakanwar2002@gmail.com
@@ -60,7 +62,9 @@ export default function Footer() {
           <div>© Anubha, 2026.</div>
           <div className="flex gap-7 uppercase tracking-[0.08em] font-semibold text-[0.8rem]">
             <a
-              href="mailto:anubhakanwar2002@gmail.com"
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=anubhakanwar2002@gmail.com"
+              target="_blank"
+              rel="noopener"
               className="text-cream transition-colors duration-300 hover:text-terracotta"
             >
               Email
