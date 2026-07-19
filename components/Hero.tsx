@@ -6,7 +6,7 @@ export default function Hero() {
   return (
     <section
       id="top"
-      className="relative overflow-hidden flex items-center min-h-[100svh] py-16 bg-cream"
+      className="relative overflow-hidden flex items-center min-h-[100svh] py-16 bg-hero"
     >
       <AmbientGlow variant="hero" className="-z-10" />
       <div

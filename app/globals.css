@@ -2,7 +2,9 @@
 
 @theme {
   --color-cream: #ffffff;
-  --color-cream-alt: #f2f0e3;
+  --color-cream-alt: #f6f4ec;
+  --color-hero: #fafaf8;
+  --color-header: #fffffe;
   --color-ink: #202020;
   --color-ink-soft: #4a4a4a;
   --color-muted: #767676;

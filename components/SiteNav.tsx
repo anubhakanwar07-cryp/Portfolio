@@ -20,7 +20,7 @@ export default function SiteNav() {
 
   return (
     <header
-      className={`sticky top-0 z-50 bg-[rgba(242,240,227,0.92)] backdrop-blur-[8px] border-b border-line transition-shadow duration-[250ms] ${
+      className={`sticky top-0 z-50 bg-header/92 backdrop-blur-[8px] border-b border-line transition-shadow duration-[250ms] ${
         scrolled ? "shadow-[0_8px_24px_-18px_rgba(24,21,15,0.45)]" : ""
       }`}
     >
