@@ -8,8 +8,12 @@ type VideoPreviewProps = {
   className?: string;
 };
 
-/** Loads a preview video only once it scrolls near the viewport, and pauses it
- * whenever it's scrolled out of view so it isn't decoding in the background. */
+/** Loads a preview video only once it scrolls into view, and pauses it
+ * whenever it's scrolled back out so it isn't decoding in the background.
+ * Restarts from the first frame on every entry (rather than resuming wherever
+ * it was paused) and triggers at the actual viewport edge rather than a
+ * pre-emptive margin, so the clip is always seen building from the start as
+ * the section comes into view, never caught already mid-way or looped. */
 export default function VideoPreview({ src, className }: VideoPreviewProps) {
   const wrapperRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -27,11 +31,15 @@ export default function VideoPreview({ src, className }: VideoPreviewProps) {
           }
           const video = videoRef.current;
           if (!video || reducedMotion) return;
-          if (entry.isIntersecting) video.play().catch(() => {});
-          else video.pause();
+          if (entry.isIntersecting) {
+            video.currentTime = 0;
+            video.play().catch(() => {});
+          } else {
+            video.pause();
+          }
         });
       },
-      { rootMargin: "200px" },
+      { rootMargin: "0px" },
     );
     observer.observe(el);
     return () => observer.disconnect();

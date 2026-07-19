@@ -47,48 +47,58 @@ const GAP_MS = 250;
 
 const EASE = "cubic-bezier(0.22, 1, 0.36, 1)";
 
+/** Visibility gate: mounts/unmounts the actual animated cycle exactly when
+ * it enters/leaves the viewport, so it always starts fresh from the first
+ * frame right as the section comes into view — rather than pre-starting
+ * early and being caught mid-cycle (or already fully played out) by the
+ * time it's actually visible. Unmounting also cancels every pending timer
+ * below for free, via each effect's own existing cleanup function — no
+ * separate pause/resume bookkeeping needed. */
 export default function RcaPreview({ className }: { className?: string }) {
   const wrapperRef = useRef<HTMLDivElement>(null);
-  const [started, setStarted] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
-  const [active, setActive] = useState(false);
-  const [fading, setFading] = useState(false);
-  const [typedCount, setTypedCount] = useState(0);
-  const reducedMotion = usePrefersReducedMotion();
 
   useEffect(() => {
     const el = wrapperRef.current;
     if (!el) return;
     const observer = new IntersectionObserver(
-      (entries) =>
-        entries.forEach((e) => {
-          if (e.isIntersecting) setStarted(true);
-          setIsVisible(e.isIntersecting);
-        }),
-      { rootMargin: "200px" },
+      (entries) => entries.forEach((e) => setIsVisible(e.isIntersecting)),
+      { rootMargin: "0px" },
     );
     observer.observe(el);
     return () => observer.disconnect();
   }, []);
 
-  useEffect(() => {
-    if (!started || reducedMotion) return;
-    setActive(true);
-  }, [started, reducedMotion]);
+  return (
+    <div ref={wrapperRef} className={className}>
+      {isVisible && <RcaPreviewCycle className="w-full h-full" />}
+    </div>
+  );
+}
 
-  // Paused while scrolled off-screen so the per-character setState loop isn't
-  // still running in the background indefinitely — the hold/fade/restart
-  // sequence below doesn't need its own visibility check, since it only ever
-  // fires once `doneTyping` is true, which itself can't happen while paused.
+function RcaPreviewCycle({ className }: { className?: string }) {
+  const [active, setActive] = useState(false);
+  const [fading, setFading] = useState(false);
+  const [typedCount, setTypedCount] = useState(0);
+  const reducedMotion = usePrefersReducedMotion();
+
+  // Mounting is itself the visibility signal (see RcaPreview above), so the
+  // very first cycle can just start immediately rather than waiting on its
+  // own intersection check.
+  useEffect(() => {
+    if (reducedMotion) return;
+    setActive(true);
+  }, [reducedMotion]);
+
   useEffect(() => {
     if (reducedMotion) {
       setTypedCount(TITLE_CHARS.length);
       return;
     }
-    if (!active || !isVisible || typedCount >= TITLE_CHARS.length) return;
+    if (!active || typedCount >= TITLE_CHARS.length) return;
     const t = setTimeout(() => setTypedCount((c) => c + 1), CHAR_MS);
     return () => clearTimeout(t);
-  }, [active, isVisible, typedCount, reducedMotion]);
+  }, [active, typedCount, reducedMotion]);
 
   const doneTyping = typedCount >= TITLE_CHARS.length;
 
@@ -126,7 +136,6 @@ export default function RcaPreview({ className }: { className?: string }) {
 
   return (
     <div
-      ref={wrapperRef}
       className={`relative flex flex-col justify-center px-[6%] pb-[5%] pt-[5%] transition-opacity ${className ?? ""}`}
       style={{
         background: "#fdf3f2",
