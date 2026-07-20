@@ -80,7 +80,7 @@ export default function AmbientGlow({
         <motion.div
           className="absolute w-[480px] h-[480px] rounded-full -bottom-32 right-[6%]"
           style={{
-            background: `radial-gradient(circle, rgba(32,32,32,${inkAlpha}), transparent 70%)`,
+            background: `radial-gradient(circle, color-mix(in srgb, var(--color-ink) ${inkAlpha * 100}%, transparent), transparent 70%)`,
           }}
           animate={animating ? { x: [0, -20, 12, 0], y: [0, 16, -10, 0] } : undefined}
           transition={loop}

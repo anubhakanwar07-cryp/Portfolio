@@ -47,8 +47,8 @@ export default function HowIWork() {
               key={c.num}
               className={`rounded-[18px] py-9 px-[30px] border border-line flex flex-col min-h-[340px] transition-[transform,box-shadow] hover:-translate-y-1.5 hover:shadow-[0_20px_40px_-24px_rgba(24,21,15,0.35)] ${
                 c.dark
-                  ? "bg-ink text-cream border-ink"
-                  : "bg-white"
+                  ? "bg-[#1e1c17] text-white border-white/15"
+                  : "bg-cream"
               }`}
             >
               <div className="font-display text-[1.6rem] text-terracotta mb-[26px]">
@@ -65,7 +65,7 @@ export default function HowIWork() {
               <span
                 className={`mt-[22px] inline-block self-start text-[0.72rem] font-bold tracking-[0.1em] uppercase px-4 py-2 rounded-full ${
                   c.dark
-                    ? "bg-white/12 text-cream"
+                    ? "bg-white/12 text-white"
                     : "bg-cream-alt text-ink"
                 }`}
               >

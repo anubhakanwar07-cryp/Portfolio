@@ -6,20 +6,24 @@ export default function Hero() {
   return (
     <section
       id="top"
-      className="relative overflow-hidden flex items-center min-h-[100svh] py-16 bg-hero"
+      className="relative overflow-hidden flex items-center min-h-[100svh] py-16 bg-hero border-b border-line"
     >
       <AmbientGlow variant="hero" className="-z-10" />
+      <div
+        aria-hidden
+        className="dot-grid-accent pointer-events-none absolute inset-0 -z-10"
+      />
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0 -z-10"
         style={{
           background:
-            "radial-gradient(ellipse at center, transparent 55%, rgba(32,32,32,0.04) 100%)",
+            "radial-gradient(ellipse at center, transparent 55%, color-mix(in srgb, var(--color-ink) 4%, transparent) 100%)",
         }}
       />
       <div className="w-full max-w-[1240px] mx-auto px-10 max-[480px]:px-5">
         <div className="relative z-[1] max-w-[900px]">
-          <h1 className="text-[clamp(2.9rem,7vw,5.6rem)]">
+          <h1 className="text-[clamp(2.9rem,7vw,5.6rem)] text-[#6B5842] dark:text-ink">
             <span className="block opacity-0 animate-line-up [animation-delay:50ms]">
               I write PRDs.
             </span>
@@ -50,7 +54,7 @@ export default function Hero() {
               <span className="inline-block opacity-0 animate-line-up [animation-delay:600ms]">
                 <MagneticButton
                   href="#footer"
-                  className="inline-flex items-center gap-2 px-[26px] py-3.5 rounded-full font-semibold text-[0.95rem] whitespace-nowrap bg-ink text-cream transition-colors hover:bg-terracotta-dark"
+                  className="inline-flex items-center gap-2 px-[26px] py-3.5 rounded-full font-semibold text-[0.95rem] whitespace-nowrap bg-[#1e1c17] text-white border border-white/15 transition-colors hover:bg-terracotta-dark"
                 >
                   Contact me ↗︎
                 </MagneticButton>

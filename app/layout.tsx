@@ -65,6 +65,16 @@ export const metadata: Metadata = {
     "APM at Emversity, trained in biosciences at IIT Roorkee, now building AI-native products end to end.",
 };
 
+const THEME_INIT_SCRIPT = `
+(function () {
+  try {
+    var stored = localStorage.getItem("theme");
+    var isDark = stored ? stored === "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches;
+    if (isDark) document.documentElement.classList.add("dark");
+  } catch (e) {}
+})();
+`;
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -74,7 +84,11 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${junicode.variable} ${bricolage.variable}`}
+      suppressHydrationWarning
     >
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
+      </head>
       <body className="bg-cream text-ink font-sans text-base leading-normal overflow-x-hidden antialiased">
         <div
           aria-hidden

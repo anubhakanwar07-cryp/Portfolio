@@ -44,7 +44,7 @@ export default function FeaturedProject({
     <Reveal
       as="section"
       id={id}
-      className={`reveal py-[100px] border-b border-line ${alt ? "bg-cream-alt" : "bg-white"}`}
+      className={`reveal py-[100px] border-b border-line ${alt ? "bg-cream-alt" : "bg-cream"}`}
     >
       <div className="max-w-[1240px] mx-auto px-10 max-[480px]:px-5">
         <div className="flex justify-between items-start gap-10 flex-wrap mb-9">
@@ -94,7 +94,7 @@ export default function FeaturedProject({
 
         <a
           href={caseHref}
-          className={`group relative rounded-[28px] mb-7 overflow-hidden flex items-center justify-center transition-[transform,box-shadow] duration-300 ease-[var(--ease-premium)] hover:-translate-y-1.5 hover:shadow-[0_50px_85px_-30px_rgba(24,21,15,0.5)] ${hasMotion ? "border border-black/10" : "py-16 px-[72px] max-[700px]:py-7 max-[700px]:px-5"}`}
+          className={`group relative rounded-[28px] mb-7 overflow-hidden flex items-center justify-center transition-[transform,box-shadow] duration-300 ease-[var(--ease-premium)] hover:-translate-y-1.5 hover:shadow-[0_50px_85px_-30px_rgba(24,21,15,0.5)] ${hasMotion ? "border border-black/10 dark:border-white/10" : "py-16 px-[72px] max-[700px]:py-7 max-[700px]:px-5"}`}
           style={{ background: frameColor }}
         >
           <AmbientGlow
@@ -136,8 +136,8 @@ export default function FeaturedProject({
                 key={tag}
                 className={
                   i === 0
-                    ? "text-[0.7rem] font-semibold tracking-[0.04em] px-3 py-1.5 rounded-full bg-ink text-cream border border-ink"
-                    : "text-[0.7rem] font-semibold tracking-[0.04em] px-3 py-1.5 rounded-full bg-transparent text-ink border border-black/30"
+                    ? "text-[0.7rem] font-semibold tracking-[0.04em] px-3 py-1.5 rounded-full bg-[#1e1c17] text-white border border-white/15"
+                    : "text-[0.7rem] font-semibold tracking-[0.04em] px-3 py-1.5 rounded-full bg-transparent text-ink border border-black/30 dark:border-white/30"
                 }
               >
                 {tag}

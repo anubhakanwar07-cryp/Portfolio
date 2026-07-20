@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <footer
       id="footer"
-      className="relative overflow-hidden scroll-mt-[100px] bg-ink text-cream pt-[100px] pb-10"
+      className="relative overflow-hidden scroll-mt-[100px] bg-[#1e1c17] text-white border-t border-white/10 pt-[100px] pb-10"
     >
       <AmbientGlow variant="footer" className="-z-10" />
       <div className="max-w-[1240px] mx-auto px-10 max-[480px]:px-5">
@@ -65,7 +65,7 @@ export default function Footer() {
               href="https://mail.google.com/mail/?view=cm&fs=1&to=anubhakanwar2002@gmail.com"
               target="_blank"
               rel="noopener"
-              className="text-cream transition-colors duration-300 hover:text-terracotta"
+              className="text-white transition-colors duration-300 hover:text-terracotta"
             >
               Email
             </a>
@@ -73,7 +73,7 @@ export default function Footer() {
               href="https://www.linkedin.com/in/anubha-kanwar-98631b227/?skipRedirect=true"
               target="_blank"
               rel="noopener"
-              className="text-cream transition-colors duration-300 hover:text-terracotta"
+              className="text-white transition-colors duration-300 hover:text-terracotta"
             >
               LinkedIn
             </a>
@@ -81,7 +81,7 @@ export default function Footer() {
               href="/Anubha_Kanwar_Resume.pdf"
               target="_blank"
               rel="noopener"
-              className="text-cream transition-colors duration-300 hover:text-terracotta"
+              className="text-white transition-colors duration-300 hover:text-terracotta"
             >
               Resume
             </a>

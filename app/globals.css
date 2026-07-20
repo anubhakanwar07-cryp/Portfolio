@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   --color-cream: #ffffff;
   --color-cream-alt: #f6f4ec;
@@ -25,6 +27,23 @@
 :root {
   --ease-premium: cubic-bezier(0.22, 1, 0.36, 1);
   --dur-reveal: 1000ms;
+}
+
+/* Night theme: re-themes every section/text color that flows through the
+   tokens above. The site's few intentionally-always-dark surfaces (Footer,
+   Testimonials, the one dark HowIWork card) and "artwork" (project preview
+   frames, mock browser chrome, RcaPreview's screenshot recreation) are pinned
+   to fixed literals in their own components rather than these tokens, so
+   they stay identical in both themes. */
+.dark {
+  --color-cream: #17181a;
+  --color-cream-alt: #1e1c17;
+  --color-hero: #1e1c17;
+  --color-header: #1e1c17;
+  --color-ink: #ededec;
+  --color-ink-soft: #b8b6b2;
+  --color-muted: #8c8a86;
+  --color-line: #2f2d28;
 }
 
 @keyframes line-up {
@@ -146,6 +165,20 @@
 .grain-overlay {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   background-repeat: repeat;
+}
+
+/* Dot-grid accent, night theme only — scoped to a single section (the hero)
+   rather than tiled across the whole page, and masked so it fades out toward
+   the edges instead of reading as flat, repetitive noise everywhere. */
+.dark .dot-grid-accent {
+  background-image: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.18) 1px,
+    transparent 1.5px
+  );
+  background-size: 22px 22px;
+  mask-image: radial-gradient(ellipse 70% 55% at 50% 30%, black 0%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse 70% 55% at 50% 30%, black 0%, transparent 75%);
 }
 
 /* Fades the last visible card in the horizontal explorations scroller instead

@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import MagneticButton from "./motion/MagneticButton";
+import ThemeToggle from "./ThemeToggle";
 
 const links = [
   { href: "#work", label: "Selected Work" },
@@ -26,7 +27,7 @@ export default function SiteNav() {
     >
       <div className="relative flex items-center max-w-[1240px] mx-auto px-10 py-5 max-[480px]:px-5 max-[480px]:py-4">
         <a href="#top" className="group flex items-center gap-2.5">
-          <span className="flex items-center justify-center w-[28px] h-[28px] rounded-full border border-ink font-display text-[0.82rem] transition-all duration-300 group-hover:bg-ink group-hover:text-cream group-hover:-rotate-[14deg]">
+          <span className="flex items-center justify-center w-[28px] h-[28px] rounded-full border border-ink font-display text-[0.82rem] transition-all duration-300 group-hover:bg-[#1e1c17] group-hover:text-white group-hover:-rotate-[14deg]">
             AK
           </span>
           <span className="font-sans font-medium text-[1.05rem] tracking-[0.04em]">
@@ -61,10 +62,11 @@ export default function SiteNav() {
         <div className="flex items-center gap-[18px] max-[860px]:ml-auto">
           <MagneticButton
             href="#footer"
-            className="max-[860px]:hidden inline-flex items-center gap-2 px-[26px] py-3.5 rounded-full font-semibold text-[0.95rem] whitespace-nowrap bg-ink text-cream transition-colors hover:bg-terracotta-dark"
+            className="max-[860px]:hidden inline-flex items-center gap-2 px-[26px] py-3.5 rounded-full font-semibold text-[0.95rem] whitespace-nowrap bg-[#1e1c17] text-white border border-white/15 transition-colors hover:bg-terracotta-dark"
           >
             Contact ↗︎
           </MagneticButton>
+          <ThemeToggle />
           <button
             aria-label="Toggle navigation menu"
             aria-expanded={open}

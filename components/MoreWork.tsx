@@ -14,7 +14,6 @@ const filters: { key: Category; label: string }[] = [
 
 const cards: {
   cat: Exclude<Category, "all">;
-  bar: string;
   eyebrow: string;
   title: string;
   desc: string;
@@ -23,7 +22,6 @@ const cards: {
 }[] = [
   {
     cat: "ai",
-    bar: "bg-[#1c9350]",
     eyebrow: "AI Product · PM-led",
     title: "EVA",
     desc: "An AI screening & interview platform — MCQ test plus a live voice interview — that screens applicants before admission.",
@@ -32,7 +30,6 @@ const cards: {
   },
   {
     cat: "ai",
-    bar: "bg-[#6d3ae8]",
     eyebrow: "AI Product · Solo Build",
     title: "PitchMate",
     desc: "An AI sales-training platform that role-plays real objections so reps rehearse before the real call.",
@@ -41,7 +38,6 @@ const cards: {
   },
   {
     cat: "ai",
-    bar: "bg-[#2140c9]",
     eyebrow: "Platform Product · PM-led",
     title: "EVA 2.0",
     desc: "The placement operating system that runs after EVA admits a student — an ops console for admin, a self-serve hub for students.",
@@ -50,7 +46,6 @@ const cards: {
   },
   {
     cat: "analytics",
-    bar: "bg-[#3d8bf2]",
     eyebrow: "Analytics · AI data product",
     title: "Socrates",
     desc: "Two internal AI products in one — natural-language querying over the database, and behavioural clustering on sales calls.",
@@ -59,7 +54,6 @@ const cards: {
   },
   {
     cat: "0to1",
-    bar: "bg-[#0e6e7e]",
     eyebrow: "0→1 Strategy",
     title: "VR Anatomy Sim",
     desc: "Scoping, BRD, cost analysis, and delivery timeline for Emverse's VR anatomy simulation — Meta headset and web access paths.",
@@ -92,8 +86,8 @@ export default function MoreWork() {
               onClick={() => setActive(f.key)}
               className={`px-5 py-2.5 rounded-full border text-[0.88rem] font-semibold transition-all hover:-translate-y-0.5 ${
                 active === f.key
-                  ? "bg-ink text-cream border-ink"
-                  : "bg-transparent border-black/30"
+                  ? "bg-[#1e1c17] text-white border-white/15"
+                  : "bg-transparent border-black/30 dark:border-white/30"
               }`}
             >
               {f.label}
@@ -107,13 +101,10 @@ export default function MoreWork() {
             return (
               <div
                 key={card.title}
-                className={`group relative rounded-[18px] bg-white border border-line overflow-hidden flex flex-col transition-[transform,border-color,box-shadow] duration-300 ease-[var(--ease-premium)] hover:-translate-y-1.5 hover:border-terracotta/25 hover:shadow-[0_18px_36px_-20px_rgba(24,21,15,0.35)] ${
+                className={`group relative rounded-[18px] bg-cream border border-line overflow-hidden flex flex-col transition-[transform,border-color,box-shadow] duration-300 ease-[var(--ease-premium)] hover:-translate-y-1.5 hover:border-terracotta/25 hover:shadow-[0_18px_36px_-20px_rgba(24,21,15,0.35)] ${
                   visible ? "" : "hidden"
                 }`}
               >
-                <div
-                  className={`h-2 w-full transition-all group-hover:h-3 ${card.bar}`}
-                />
                 <div className="pt-[26px] px-6 pb-7 flex flex-col grow">
                   <div className="text-[0.72rem] font-bold tracking-[0.09em] uppercase text-muted mb-2.5">
                     {card.eyebrow}

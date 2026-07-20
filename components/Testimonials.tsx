@@ -42,7 +42,7 @@ export default function Testimonials() {
     <Reveal
       as="section"
       id="testimonials"
-      className="reveal relative overflow-hidden bg-ink text-cream py-[100px]"
+      className="reveal relative overflow-hidden bg-[#1e1c17] text-white py-[100px]"
     >
       <AmbientGlow variant="footer" className="-z-10" />
       <div className="max-w-[1240px] mx-auto px-10 max-[480px]:px-5">
@@ -91,7 +91,7 @@ export default function Testimonials() {
                 aria-label={`Go to testimonial ${i + 1}`}
                 onClick={() => setActive(i)}
                 className={`h-2 rounded-full transition-all ${
-                  i === active ? "w-[22px] bg-cream" : "w-2 bg-[#4A4638]"
+                  i === active ? "w-[22px] bg-white" : "w-2 bg-[#4A4638]"
                 }`}
               />
             ))}
@@ -100,14 +100,14 @@ export default function Testimonials() {
             <button
               aria-label="Previous testimonial"
               onClick={() => go(active - 1)}
-              className="w-10 h-10 rounded-full border-[1.5px] border-[#4A4638] text-cream text-lg transition-colors hover:bg-white/8 hover:border-[#8B857A]"
+              className="w-10 h-10 rounded-full border-[1.5px] border-[#4A4638] text-white text-lg transition-colors hover:bg-white/8 hover:border-[#8B857A]"
             >
               ‹
             </button>
             <button
               aria-label="Next testimonial"
               onClick={() => go(active + 1)}
-              className="w-10 h-10 rounded-full border-[1.5px] border-[#4A4638] text-cream text-lg transition-colors hover:bg-white/8 hover:border-[#8B857A]"
+              className="w-10 h-10 rounded-full border-[1.5px] border-[#4A4638] text-white text-lg transition-colors hover:bg-white/8 hover:border-[#8B857A]"
             >
               ›
             </button>
