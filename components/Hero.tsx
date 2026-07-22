@@ -23,7 +23,7 @@ export default function Hero() {
       />
       <div className="w-full max-w-[1240px] mx-auto px-10 max-[480px]:px-5">
         <div className="relative z-[1] max-w-[900px]">
-          <h1 className="text-[clamp(2.9rem,7vw,5.6rem)] text-[#6B5842] dark:text-ink">
+          <h1 className="text-[clamp(2.9rem,7vw,5.6rem)] text-ink">
             <span className="block opacity-0 animate-line-up [animation-delay:50ms]">
               I write PRDs.
             </span>

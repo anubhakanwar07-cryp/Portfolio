@@ -48,7 +48,7 @@ export default function HowIWork() {
               className={`rounded-[18px] py-9 px-[30px] border border-line flex flex-col min-h-[340px] transition-[transform,box-shadow] hover:-translate-y-1.5 hover:shadow-[0_20px_40px_-24px_rgba(24,21,15,0.35)] ${
                 c.dark
                   ? "bg-[#1e1c17] text-white border-white/15"
-                  : "bg-cream"
+                  : "bg-cream hover:border-2 hover:border-black/30"
               }`}
             >
               <div className="font-display text-[1.6rem] text-terracotta mb-[26px]">

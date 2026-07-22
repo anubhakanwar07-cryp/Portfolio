@@ -13,22 +13,27 @@ const filters: { key: Category; label: string }[] = [
 ];
 
 const cards: {
+  num: string;
   cat: Exclude<Category, "all">;
   eyebrow: string;
   title: string;
   desc: string;
   tags: string[];
   href: string;
+  dark?: boolean;
 }[] = [
   {
+    num: "01",
     cat: "ai",
     eyebrow: "AI Product · PM-led",
     title: "EVA",
     desc: "An AI screening & interview platform — MCQ test plus a live voice interview — that screens applicants before admission.",
     tags: ["Voice AI", "Admissions"],
     href: "/work/eva",
+    dark: true,
   },
   {
+    num: "02",
     cat: "ai",
     eyebrow: "AI Product · Solo Build",
     title: "PitchMate",
@@ -37,6 +42,7 @@ const cards: {
     href: "/work/pitchmate",
   },
   {
+    num: "03",
     cat: "ai",
     eyebrow: "Platform Product · PM-led",
     title: "EVA 2.0",
@@ -45,6 +51,7 @@ const cards: {
     href: "/work/eva2",
   },
   {
+    num: "04",
     cat: "analytics",
     eyebrow: "Analytics · AI data product",
     title: "Socrates",
@@ -53,6 +60,7 @@ const cards: {
     href: "/work/socrates",
   },
   {
+    num: "05",
     cat: "0to1",
     eyebrow: "0→1 Strategy",
     title: "VR Anatomy Sim",
@@ -101,25 +109,42 @@ export default function MoreWork() {
             return (
               <div
                 key={card.title}
-                className={`group relative rounded-[18px] bg-cream border border-line overflow-hidden flex flex-col transition-[transform,border-color,box-shadow] duration-300 ease-[var(--ease-premium)] hover:-translate-y-1.5 hover:border-terracotta/25 hover:shadow-[0_18px_36px_-20px_rgba(24,21,15,0.35)] ${
-                  visible ? "" : "hidden"
-                }`}
+                className={`group relative rounded-[18px] border overflow-hidden flex flex-col transition-[transform,border-color,box-shadow] duration-300 ease-[var(--ease-premium)] hover:-translate-y-1.5 hover:shadow-[0_18px_36px_-20px_rgba(24,21,15,0.35)] ${
+                  card.dark
+                    ? "bg-[#1e1c17] text-white border-white/15"
+                    : "bg-cream border-line hover:border-2 hover:border-black/30"
+                } ${visible ? "" : "hidden"}`}
               >
                 <div className="pt-[26px] px-6 pb-7 flex flex-col grow">
-                  <div className="text-[0.72rem] font-bold tracking-[0.09em] uppercase text-muted mb-2.5">
+                  <div className="font-display text-[1.4rem] text-terracotta mb-3">
+                    {card.num}
+                  </div>
+                  <div
+                    className={`text-[0.72rem] font-bold tracking-[0.09em] uppercase mb-2.5 ${
+                      card.dark ? "text-white/60" : "text-muted"
+                    }`}
+                  >
                     {card.eyebrow}
                   </div>
                   <h3 className="font-display font-bold text-[1.3rem] mb-3 leading-[1.15]">
                     {card.title}
                   </h3>
-                  <p className="text-ink-soft text-[0.95rem] grow mb-[18px]">
+                  <p
+                    className={`text-[0.95rem] grow mb-[18px] ${
+                      card.dark ? "text-[#D9D3C6]" : "text-ink-soft"
+                    }`}
+                  >
                     {card.desc}
                   </p>
                   <div className="flex gap-2 flex-wrap mb-4">
                     {card.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="text-[0.7rem] font-semibold tracking-[0.04em] px-3 py-1.5 rounded-full bg-cream-alt text-ink-soft"
+                        className={`text-[0.7rem] font-semibold tracking-[0.04em] px-3 py-1.5 rounded-full ${
+                          card.dark
+                            ? "bg-white/12 text-white"
+                            : "bg-cream-alt text-ink-soft"
+                        }`}
                       >
                         {tag}
                       </span>
@@ -127,7 +152,11 @@ export default function MoreWork() {
                   </div>
                   <a
                     href={card.href}
-                    className="font-bold text-[0.88rem] text-terracotta-dark inline-flex items-center gap-1.5 hover:underline transition-colors duration-300 hover:text-terracotta"
+                    className={`font-bold text-[0.88rem] inline-flex items-center gap-1.5 hover:underline transition-colors duration-300 ${
+                      card.dark
+                        ? "text-terracotta hover:text-white"
+                        : "text-terracotta-dark hover:text-terracotta"
+                    }`}
                   >
                     Read case study{" "}
                     <span className="transition-transform group-hover:translate-x-1">

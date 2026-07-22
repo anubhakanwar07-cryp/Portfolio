@@ -6,8 +6,6 @@ import FeaturedProject from "@/components/FeaturedProject";
 import RcaPreview from "@/components/motion/RcaPreview";
 import VideoPreview from "@/components/motion/VideoPreview";
 import MoreWork from "@/components/MoreWork";
-import Testimonials from "@/components/Testimonials";
-import Explorations from "@/components/Explorations";
 import About from "@/components/About";
 import Footer from "@/components/Footer";
 
@@ -73,8 +71,6 @@ export default function Home() {
       />
 
       <MoreWork />
-      <Testimonials />
-      <Explorations />
       <About />
       <Footer />
     </>
