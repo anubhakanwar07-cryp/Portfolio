@@ -1,6 +1,6 @@
 import AmbientGlow from "./motion/AmbientGlow";
 import MagneticButton from "./motion/MagneticButton";
-import TypewriterLine from "./motion/TypewriterLine";
+import CyclingTypewriterWord from "./motion/CyclingTypewriterWord";
 
 export default function Hero() {
   return (
@@ -22,19 +22,22 @@ export default function Hero() {
         }}
       />
       <div className="w-full max-w-[1240px] mx-auto px-10 max-[480px]:px-5">
-        <div className="relative z-[1] max-w-[900px]">
-          <h1 className="text-[clamp(2.9rem,7vw,5.6rem)] text-ink">
+        <div className="relative z-[1] max-w-[1140px]">
+          <h1 className="text-[clamp(2.4rem,6.9vw,5.1rem)] leading-[1.15] text-ink">
             <span className="block opacity-0 animate-line-up [animation-delay:50ms]">
-              I write PRDs.
+              I prototype fast.
             </span>
-            <TypewriterLine
-              text="Then I go build the thing."
-              delayMs={200}
-              charMs={45}
-              className="italic text-terracotta"
-            />
-            <span className="block opacity-0 animate-line-up [animation-delay:1450ms] text-[0.5em] mt-1.5">
-              Because specs don&apos;t ship — products do.
+            <span className="block italic text-terracotta opacity-0 animate-line-up [animation-delay:450ms]">
+              AI does the heavy lifting.
+            </span>
+            <span className="block opacity-0 animate-line-up [animation-delay:850ms]">
+              I&apos;m more interested in the{" "}
+              <CyclingTypewriterWord
+                words={["problem", "friction", "churn", "drop-off", "habit", "gap"]}
+                className="text-terracotta"
+                startDelayMs={1200}
+              />
+              .
             </span>
           </h1>
         </div>
@@ -42,13 +45,14 @@ export default function Hero() {
         <div className="mt-14 grid grid-cols-[1.5fr_1fr] gap-[60px] items-start max-[860px]:grid-cols-1 max-[860px]:gap-8">
           <div>
             <p className="text-[1.15rem] text-ink-soft max-w-[620px] opacity-0 animate-line-up [animation-delay:500ms]">
-              APM at Emversity, trained in biosciences at IIT Roorkee, now
-              building AI-native products end to end. I&apos;ve personally{" "}
+              APM at Emversity, trained in biosciences at IIT Roorkee — an
+              unusual route into product, but one that taught me to sit with
+              ambiguity before reaching for a solution. I&apos;ve{" "}
               <em className="font-serif-accent italic font-medium text-terracotta-dark">
-                coded and shipped two live tools
-              </em>{" "}
-              with no formal engineering background — just Claude, GPT, and
-              Cursor.
+                shipped tools myself, end to end
+              </em>
+              , and that&apos;s changed what I look for in a problem before I
+              commit to it.
             </p>
             <div className="flex gap-4 flex-wrap mt-8">
               <span className="inline-block opacity-0 animate-line-up [animation-delay:600ms]">
