@@ -31,6 +31,11 @@ export default function About() {
           </p>
         </div>
         <div className="flex flex-col gap-5">
+          <div className="relative w-full max-w-[280px] aspect-[4/5] rounded-[18px] overflow-hidden border border-line bg-cream flex items-center justify-center">
+            {/* Placeholder — replace with next/image once a photo file is provided:
+                <Image src="/headshot.jpg" alt="Anubha Kanwar" fill className="object-cover" /> */}
+            <span className="font-display text-[2.75rem] text-muted">AK</span>
+          </div>
           {facts.map((f, i) => (
             <div
               key={f.label}
