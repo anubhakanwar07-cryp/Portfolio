@@ -88,8 +88,8 @@ export default function Hero() {
                 Available for
               </span>
               <span className="block text-base">
-                AI-native PM roles · Series A+ · Founder-led teams · Remote or
-                Bengaluru
+                AI-native PM roles · Series A through growth-stage · Remote
+                or Bengaluru
               </span>
             </div>
           </div>
