@@ -79,8 +79,7 @@ export default function Footer() {
             </a>
             <a
               href="/Anubha_Kanwar_Resume.pdf"
-              target="_blank"
-              rel="noopener"
+              download="Anubha_Kanwar_Resume.pdf"
               className="text-white transition-colors duration-300 hover:text-terracotta"
             >
               Resume
